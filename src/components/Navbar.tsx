@@ -33,7 +33,7 @@ export default function Navbar() {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className="flex p-4 px-8">
+    <div className="flex p-4 px-8 fixed top-0 w-full bg-white border-b-[3px] z-[999]">
       {/* Desktop menu */}
       <div className="hidden md:flex w-full justify-between ">
         <div className="flex h-full items-center">
@@ -189,7 +189,7 @@ export default function Navbar() {
         </NavigationMenu>
       </div>
       {/* Hamburger */}
-      <div className="md:hidden z-10 flex w-full h-full items-center justify-between">
+      <div className="md:hidden z-50 flex w-full h-full items-center justify-between">
         <Link href="/">
           <Image
             className="cursor-pointer"
@@ -200,15 +200,23 @@ export default function Navbar() {
           />
         </Link>
         {!nav ? (
-          <FaBars onClick={handleClick} className="cursor-pointer" size={25} />
+          <FaBars
+            onClick={handleClick}
+            className="cursor-pointer z-50"
+            size={25}
+          />
         ) : (
-          <FaTimes onClick={handleClick} className="cursor-pointer" size={25} />
+          <FaTimes
+            onClick={handleClick}
+            className="cursor-pointer z-50"
+            size={25}
+          />
         )}
       </div>
 
       {/* Mobile menu */}
       {nav && (
-        <div className="md:hidden absolute top-0 left-0 w-full h-screen bg-[#fff]">
+        <div className="md:hidden absolute top-0 left-0 w-full h-screen bg-[#fff] z-40">
           <Accordion type="single" collapsible className="w-full mt-20 px-8">
             <AccordionItem value="item-1">
               <AccordionTrigger>About Us</AccordionTrigger>
