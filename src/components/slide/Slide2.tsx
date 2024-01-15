@@ -25,8 +25,8 @@ export default function Slide2() {
       </Card>
 
       {/* Mobile */}
-      <div className="flex md:hidden w-full h-full items-center justify-center">
-        <div className="w-3/4">
+      <div className="flex md:hidden w-full h-full items-center justify-center bg-slate-600">
+        <div className="w-full">
           <Image
             alt="slide2"
             src={require("@/app/assets/landing/sfa-skillsfuture.jpg")}

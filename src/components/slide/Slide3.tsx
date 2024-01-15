@@ -62,8 +62,8 @@ export default function Slide3() {
       </div>
 
       {/* Mobile */}
-      <div className="flex md:hidden w-full h-full items-center justify-center">
-        <div className="w-3/4">
+      <div className="flex md:hidden w-full h-full items-center justify-center bg-[#FCFCE5]">
+        <div className="w-full">
           <Image
             alt="overlay"
             src={require("@/app/assets/landing/dptm-square.png")}

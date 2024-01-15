@@ -1,15 +1,19 @@
+import Footer from "@/components/Footer";
 import LandingCarousel from "@/components/LandingCarousel";
 import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <header>
         <Navbar />
       </header>
       <main>
         <LandingCarousel />
       </main>
-    </div>
+      <footer>
+        <Footer />
+      </footer>
+    </>
   );
 }
