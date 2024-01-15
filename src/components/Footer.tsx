@@ -54,57 +54,65 @@ export default function Footer() {
           <div>
             <Link
               href="/"
-              className="text-[#06367E] font-medium hover:underline duration-150">
+              className="text-[#0C3557] font-medium relative group">
               Contact Us
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#0C3557] transform origin-left scale-x-0 transition-transform duration-700 group-hover:scale-x-100"></span>
             </Link>
           </div>
           <div>
             <Link
               href="/"
-              className="text-[#06367E] font-medium hover:underline duration-150">
+              className="text-[#0C3557] font-medium relative group">
               Travel Insurance
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#0C3557] transform origin-left scale-x-0 transition-transform duration-700 group-hover:scale-x-100"></span>
             </Link>
           </div>
           <div>
             <Link
               href="/"
-              className="text-[#06367E] font-medium hover:underline duration-150">
+              className="text-[#0C3557] font-medium relative group">
               Motor Insurance
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#0C3557] transform origin-left scale-x-0 transition-transform duration-700 group-hover:scale-x-100"></span>
             </Link>
           </div>
           <div>
             <Link
               href="/"
-              className="text-[#06367E] font-medium hover:underline duration-150">
+              className="text-[#0C3557] font-medium relative group">
               Our Quality Policy (Fair Dealing Commitment)
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#0C3557] transform origin-left scale-x-0 transition-transform duration-700 group-hover:scale-x-100"></span>
             </Link>
           </div>
           <div>
             <Link
               href="/"
-              className="text-[#06367E] font-medium hover:underline duration-150">
+              className="text-[#0C3557] font-medium relative group">
               Personal Data Protection Policy (PDPA)
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#0C3557] transform origin-left scale-x-0 transition-transform duration-700 group-hover:scale-x-100"></span>
             </Link>
           </div>
           <div>
             <Link
               href="/"
-              className="text-[#06367E] font-medium hover:underline duration-150">
+              className="text-[#0C3557] font-medium relative group">
               Complaints Handling and Resolution
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#0C3557] transform origin-left scale-x-0 transition-transform duration-700 group-hover:scale-x-100"></span>
             </Link>
           </div>
           <div>
             <Link
               href="/"
-              className="text-[#06367E] font-medium hover:underline duration-150">
+              className="text-[#0C3557] font-medium relative group">
               Careers
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#0C3557] transform origin-left scale-x-0 transition-transform duration-700 group-hover:scale-x-100"></span>
             </Link>
           </div>
           <div className="mt-8">
             <Link
               href="/"
-              className="text-[#06367E] font-medium hover:underline duration-150">
+              className="text-[#0C3557] font-medium relative group">
               OneSynergy Login
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#0C3557] transform origin-left scale-x-0 transition-transform duration-700 group-hover:scale-x-100"></span>
             </Link>
           </div>
         </div>
