@@ -12,10 +12,10 @@ export default function SectionEnd() {
         />
       </div>
       <div className="relative bottom-[16.5rem] md:bottom-20 px-[2rem] flex gap-4">
-        <Button className="bg-[#06367E] hover:bg-white hover:text-black w-1/2 h-[30px] md:h-full">
+        <Button className="bg-[#06367E] hover:bg-white hover:text-black w-1/2 h-[30px] md:h-[50px]">
           Careers with Synergy
         </Button>
-        <Button className="bg-white text-black hover:bg-[#06367E] hover:text-white w-1/2 h-[30px] md:h-full">
+        <Button className="bg-white text-black hover:bg-[#06367E] hover:text-white w-1/2 h-[30px] md:h-[50px]">
           Get A Quote
         </Button>
       </div>

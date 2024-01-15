@@ -51,7 +51,7 @@ const CustomCard = ({
         className={styles.card}>
         <h2 className="font-medium">{title}</h2>
         <p>{job}</p>
-        <hr className="border-t-[1px] border-gray-300 mt-4 mx-[4rem]" />
+        <hr className="border-t-[1px] border-gray-300 mt-4" />
 
         <div className={styles.body}>
           <div className={styles.description}>

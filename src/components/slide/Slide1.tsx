@@ -15,9 +15,9 @@ export default function Slide1() {
       </div>
 
       {/* Overlay Images */}
-      <div className="absolute top-[6rem] md:flex gap-[6rem]">
+      <div className="absolute top-[2rem] md:top-[4rem] md:flex gap-[3rem]">
         <div className="relative w-full h-full">
-          <div className="bg-white w-[250px] mb-6 md:mb-0 md:w-[520px] md:h-[520px] rounded-md">
+          <div className="bg-white w-[290px] mb-6 md:mb-0 md:w-[550px] md:h-[550px] rounded-md">
             <Image
               alt="overlay"
               src={require("@/app/assets/landing/2023-lfs.jpg")}
@@ -28,7 +28,7 @@ export default function Slide1() {
           </div>
         </div>
         <div className="relative w-full h-full">
-          <div className="bg-white w-[250px] md:w-[520px] md:h-[520px] rounded-md">
+          <div className="bg-white w-[290px] md:w-[550px] md:h-[550px] rounded-md">
             <Image
               alt="overlay"
               src={require("@/app/assets/landing/2023-journey.png")}

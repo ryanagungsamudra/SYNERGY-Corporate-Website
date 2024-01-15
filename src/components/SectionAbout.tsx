@@ -45,23 +45,39 @@ const HorizontalScrollCarousel = ({
 interface CardProps {
   icon: JSX.Element;
   title: string;
-  description: string;
+  description: string | JSX.Element;
 }
 
 const CustomCard = ({ icon, title, description }: CardProps) => {
   return (
     <div className="group relative h-[450px] w-[450px] overflow-hidden bg-white p-6 m-2 rounded-xl">
       <div className="flex flex-col items-center md:items-start md:mr-19 mt-8 md:mt-0">
-        <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#06367E]">
-          {icon}
+        <div className="flex w-full justify-center">
+          <div className="flex items-center justify-center w-[6rem] h-[6rem] rounded-full bg-[#06367E]">
+            {icon}
+          </div>
         </div>
-        <h1 className="text-xl md:text-2xl font-semibold mt-4 text-[#0C3557]">
-          {title}
-        </h1>
-        <p className="text-lg md:text-xl mt-4 text-center md:text-left">
+        <div className="flex w-full justify-center">
+          <h1 className="text-xl md:text-2xl font-semibold mt-4 text-[#0C3557]">
+            {title}
+          </h1>
+        </div>
+        <p className="text-lg md:text-lg mt-4 text-center md:text-left">
           {description}
         </p>
       </div>
+    </div>
+  );
+};
+
+const CustomCardMobile = ({ icon, title, description }: CardProps) => {
+  return (
+    <div className="flex flex-col items-center md:items-start md:mr-16 mt-8 md:mt-0">
+      <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#06367E]">
+        {icon}
+      </div>
+      <h1 className="text-xl md:text-2xl mt-4 text-[#0C3557]">{title}</h1>
+      <p className="text-lg md:text-xl mt-4 text-left">{description}</p>
     </div>
   );
 };
@@ -70,41 +86,68 @@ export default function SectionAbout() {
   const cards = [
     {
       id: 1,
-      icon: <FaPeopleGroup className="text-white text-2xl" />,
+      icon: <FaPeopleGroup className="text-white text-4xl" />,
       title: "PEOPLE",
-      description:
-        "Our Client Advisers are our greatest asset. Our advisers work with us on a trusted partnership helping to enhance knowledge and practices, and client experiences. \n\nWe recruit and retain the best in the field and make a commitment towards developing their potential even further, as an employer of choice.",
+      description: (
+        <>
+          Our Client Advisers are our greatest asset. Our advisers work with us
+          on a trusted partnership helping to enhance knowledge and practices,
+          and client experiences.
+          <br />
+          <br />
+          We recruit and retain the best in the field and make a commitment
+          towards developing their potential even further, as an employer of
+          choice.
+        </>
+      ),
     },
     {
       id: 2,
-      icon: <FaRegHandshake className="text-white text-2xl" />,
+      icon: <FaRegHandshake className="text-white text-4xl" />,
       title: "PROFESSIONALISM",
-      description:
-        "Our advisers are professional in that they behave with integrity, trust, and competency providing personalized advice successfully. We keep our advisers on their toes, with high standards of performance expected of them.",
+      description: (
+        <>
+          Our advisers are professional in that they behave with integrity,
+          trust, and competency providing personalized advice successfully.
+          <br />
+          <br />
+          We keep our advisers on their toes, with high standards of performance
+          expected of them.
+        </>
+      ),
     },
     {
       id: 3,
-      icon: <GiProgression className="text-white text-2xl" />,
+      icon: <GiProgression className="text-white text-4xl" />,
       title: "PROGRESS",
-      description:
-        "We have achieved progress and sustainable growth over the past years due to our engaged leaders, teams, and advisers. Progress and growth are the foundation of a future where the company is kept moving in a positive and productive direction. The more we grow, the better we serve our clients.",
+      description: (
+        <>
+          We have achieved progress and sustainable growth over the past years
+          due to our engaged leaders, teams, and advisers.
+          <br />
+          <br />
+          Progress and growth are the foundation of a future where the company
+          is kept moving in a positive and productive direction. The more we
+          grow, the better we serve our clients.
+        </>
+      ),
     },
     {
       id: 4,
-      icon: <FaEye className="text-white text-2xl" />,
+      icon: <FaEye className="text-white text-4xl" />,
       title: "OUR VISION",
       description: "To be the most admired Financial Advisory firm in Asia",
     },
     {
       id: 5,
-      icon: <GoGoal className="text-white text-2xl" />,
+      icon: <GoGoal className="text-white text-4xl" />,
       title: "OUR MISSION",
       description:
         "Working together to achieve financial freedom by harnessing technology and innovation",
     },
     {
       id: 6,
-      icon: <FaStar className="text-white text-2xl" />,
+      icon: <FaStar className="text-white text-4xl" />,
       title: "OUR VALUES",
       description: "People, Professionalism and Progress",
     },
@@ -209,92 +252,10 @@ export default function SectionAbout() {
       </HorizontalScrollCarousel>
 
       {/* Mobile */}
-      <div className=" flex md:hidden flex-row flex-wrap justify-center items-center mt-16 px-[3rem] my-[3rem]">
-        {/* item 1 */}
-        <div className="flex flex-col items-center md:items-start md:mr-16">
-          <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#06367E]">
-            <FaPeopleGroup className="text-white text-2xl" />
-          </div>
-          <h1 className="text-xl md:text-2xl mt-4 text-[#0C3557]">PEOPLE</h1>
-          <p className="text-lg md:text-xl mt-4 text-center md:text-left">
-            Our Client Advisers are our greatest asset. Our advisers work with
-            us on a trusted partnership helping to enhance knowledge and
-            practices, and client experiences. We recruit and retain the best in
-            the field and make a commitment towards developing their potential
-            even further, as an employer of choice.
-          </p>
-        </div>
-
-        {/* item 2 */}
-        <div className="flex flex-col items-center md:items-start md:mr-16 mt-8 md:mt-0">
-          <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#06367E]">
-            <FaRegHandshake className="text-white text-2xl" />
-          </div>
-          <h1 className="text-xl md:text-2xl mt-4 text-[#0C3557]">
-            PROFESSIONALISM
-          </h1>
-          <p className="text-lg md:text-xl mt-4 text-center md:text-left">
-            Our advisers are professional in that they behave with integrity,
-            trust, and competency providing personalized advice successfully. We
-            keep our advisers on their toes, with high standards of performance
-            expected of them.
-          </p>
-        </div>
-
-        {/* item 3 */}
-        <div className="flex flex-col items-center md:items-start mt-8 md:mt-0">
-          <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#06367E]">
-            <GiProgression className="text-white text-2xl" />
-          </div>
-          <h1 className="text-xl md:text-2xl mt-4 text-[#0C3557]">PROGRESS</h1>
-          <p className="text-lg md:text-xl mt-4 text-center md:text-left">
-            We have achieved progress and sustainable growth over the past years
-            due to our engaged leaders, teams, and advisers. Progress and growth
-            are the foundation of a future where the company is kept moving in a
-            positive and productive direction. The more we grow, the better we
-            serve our clients.
-          </p>
-        </div>
-
-        {/* item 4 */}
-        <div className="flex flex-col items-center md:items-start mt-8 md:mt-0">
-          <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#06367E]">
-            <FaEye className="text-white text-2xl" />
-          </div>
-          <h1 className="text-xl md:text-2xl mt-4 text-[#0C3557]">
-            OUR VISION
-          </h1>
-          <p className="text-lg md:text-xl mt-4 text-center md:text-left">
-            To be the most admired Financial Advisory firm in Asia
-          </p>
-        </div>
-
-        {/* item 5 */}
-        <div className="flex flex-col items-center md:items-start mt-8 md:mt-0">
-          <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#06367E]">
-            <GoGoal className="text-white text-2xl" />
-          </div>
-          <h1 className="text-xl md:text-2xl mt-4 text-[#0C3557]">
-            OUR MISSION
-          </h1>
-          <p className="text-lg md:text-xl mt-4 text-center md:text-left">
-            Working together to achieve financial freedom by harnessing
-            technology and innovation
-          </p>
-        </div>
-
-        {/* item 6 */}
-        <div className="flex flex-col items-center md:items-start mt-8 md:mt-0">
-          <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#06367E]">
-            <FaStar className="text-white text-2xl" />
-          </div>
-          <h1 className="text-xl md:text-2xl mt-4 text-[#0C3557]">
-            OUR VALUES
-          </h1>
-          <p className="text-lg md:text-xl mt-4 text-center md:text-left">
-            People, Professionalism and Progress
-          </p>
-        </div>
+      <div className="flex md:hidden flex-row flex-wrap justify-center items-center mt-16 px-[3rem] my-[3rem]">
+        {cards.map((card) => (
+          <CustomCardMobile key={card.id} {...card} />
+        ))}
       </div>
     </div>
   );

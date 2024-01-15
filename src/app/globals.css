@@ -75,6 +75,17 @@
   }
 }
 
+.text-gradient-blue-white {
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #3498db, #ffffff);
+  display: inline-block;
+}
+
+.bg-gradient-three-colors {
+  background-image: linear-gradient(to right, #345264, #A48884, #4A201C);
+}
+
 /* Swiper JS */
 .swiper {
   width: 100%;
