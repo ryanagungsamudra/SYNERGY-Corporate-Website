@@ -112,8 +112,8 @@ export default function SectionAbout() {
 
   return (
     <div>
-      <div className="flex flex-wrap md:flex-nowrap md:mx-[7.5rem] md:gap-[1.5rem]">
-        <Card className="p-[2rem] px-[2rem] md:p-[3rem] md:px-[3rem] md:my-[6rem]">
+      <div className="flex flex-wrap md:flex-nowrap md:mx-[5rem] md:gap-[1.5rem]">
+        <div className="p-[2rem] px-[2rem] md:p-[3rem] md:px-[3rem] md:my-[6rem]">
           <Reveal>
             <h1 className="text-center text-3xl md:text-5xl text-[#0C3557]">
               WHAT DOES{" "}
@@ -153,9 +153,9 @@ export default function SectionAbout() {
               </p>
             </div>
           </Reveal>
-        </Card>
+        </div>
 
-        <Card className="p-[2rem] px-[2rem] md:p-[3rem] md:px-[3rem] md:my-[6rem]">
+        <div className="p-[2rem] px-[2rem] md:p-[3rem] md:px-[3rem] md:my-[6rem]">
           <Reveal>
             <h1 className="text-center text-3xl md:text-5xl text-[#0C3557]">
               WHAT MAKES{" "}
@@ -197,11 +197,11 @@ export default function SectionAbout() {
               </p>
             </div>
           </Reveal>
-        </Card>
+        </div>
       </div>
 
       <HorizontalScrollCarousel>
-        <div className="flex flex-col md:flex-row justify-center items-center mt-16 px-[4rem] my-[4rem]">
+        <div className="flex flex-col md:flex-row justify-center items-center px-[4rem] ">
           {cards.map((card) => (
             <CustomCard key={card.id} {...card} />
           ))}
@@ -209,7 +209,7 @@ export default function SectionAbout() {
       </HorizontalScrollCarousel>
 
       {/* Mobile */}
-      <div className=" flex md:hidden flex-col md:flex-row justify-center items-center mt-16 px-[4rem] my-[4rem]">
+      <div className=" flex md:hidden flex-row flex-wrap justify-center items-center mt-16 px-[3rem] my-[3rem]">
         {/* item 1 */}
         <div className="flex flex-col items-center md:items-start md:mr-16">
           <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#06367E]">
