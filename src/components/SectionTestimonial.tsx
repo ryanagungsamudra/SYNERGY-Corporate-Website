@@ -37,7 +37,7 @@ export default function SectionTestimonial() {
       title: "Ms Cel",
       job: "Public Servant",
       description:
-        '"I have a very positive experience with Clive! He provides clear explanation for the various policies, takes the time and effort to run through my financial health, and gave advice that serves my needs along with detailed action steps that I need to take to achieve my financial goals. He also managed to simplify difficult financial terms/concepts for my understanding. Im glad to have him in my financial journey."',
+        '"I have a very positive experience with Crive! He provides clear explanation for the various policies, takes the time and effort to run through my financial health, and gave advice that serves my needs along with detailed action steps that I need to take to achieve my financial goals. He also managed to simplify difficult financial terms/concepts for my understanding. Im glad to have him in my financial journey."',
       clientOf: "CRIVE LIM",
       src: "testi2.jpeg",
       url: "https://www.ignant.com/2022/09/30/clement-chapillon-questions-geographical-and-mental-isolation-with-les-rochers-fauves/",
@@ -48,7 +48,7 @@ export default function SectionTestimonial() {
       job: "Banking Professional",
       description:
         '"Ben is a well trusted advisor who never fails to response swiftly to my queries. Notably, Ben exhibits good industry knowledge and provides good financial advices. I am writing this to show my appreciation to Ben, whom had me well insured/covered."',
-      clientOf: "GARRICK LIN",
+      clientOf: "BEN SIM",
       src: "testi3.jpeg",
       url: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
       color: "#fff",
@@ -69,7 +69,7 @@ export default function SectionTestimonial() {
     <>
       <main
         ref={container}
-        className="relative mt-[-40vh] pt-[5rem] bg-gradient-to-r from-white to-gray-300">
+        className="relative mt-[10vh] md:mt-[-40vh] pt-[5rem] bg-gradient-to-r from-white to-gray-300">
         <h1 className="text-4xl font-bold text-center text-[#06367F]">
           HEAR FROM OUR CLIENTS
         </h1>
