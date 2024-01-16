@@ -8,7 +8,7 @@ import { FaFacebookSquare, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <Card className="flex flex-wrap p-8 mt-[-3.1rem]">
+    <Card className="flex flex-wrap p-8 mt-[-3.1rem] relative bottom-0">
       <div className="md:w-[25%]">
         <h1 className="text-xl font-medium underline underline-offset-4 text-[#0C3557]">
           Synergy Financial Advisers Ltd

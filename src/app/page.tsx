@@ -6,7 +6,7 @@ import SectionEnd from "@/components/SectionEnd";
 import SectionNews from "@/components/SectionNews";
 import SectionTestimonial from "@/components/SectionTestimonial";
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <header>

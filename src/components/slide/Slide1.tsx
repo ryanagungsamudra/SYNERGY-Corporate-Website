@@ -15,7 +15,7 @@ export default function Slide1() {
       </div>
 
       {/* Overlay Images */}
-      <div className="absolute top-[2rem] md:top-[4rem] md:flex gap-[3rem]">
+      <div className="absolute top-[2rem] md:top-[4rem] md:flex gap-[8rem]">
         <div className="relative w-full h-full">
           <div className="bg-white w-[290px] mb-6 md:mb-0 md:w-[550px] md:h-[550px] rounded-md">
             <Image

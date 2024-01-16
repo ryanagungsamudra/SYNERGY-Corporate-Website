@@ -18,7 +18,7 @@ interface CardProps {
   targetScale: number;
 }
 
-const CustomCard = ({
+const TestimonialCard = ({
   i,
   title,
   job,
@@ -34,7 +34,7 @@ const CustomCard = ({
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start end", "start start"],
+    offset: ["start start", "start end"],
   });
 
   const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
@@ -53,7 +53,7 @@ const CustomCard = ({
         <p>{job}</p>
         <hr className="border-t-[1px] border-gray-300 mt-4" />
 
-        <div className={styles.body}>
+        <div className={`${styles.body} gap-[10px] md:gap-[50px]`}>
           <div className={styles.description}>
             <p className="text-[13px] md:text-[18px] text-start">
               {description}
@@ -86,4 +86,4 @@ const CustomCard = ({
   );
 };
 
-export default CustomCard;
+export default TestimonialCard;

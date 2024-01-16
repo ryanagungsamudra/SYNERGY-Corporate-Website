@@ -1,5 +1,5 @@
 "use client";
-import CustomCard from "@/components/ui/custom/CustomCard";
+import TestimonialCard from "@/components/ui/custom/TestimonialCard";
 import { useScroll } from "framer-motion";
 import { useEffect, useRef } from "react";
 import Lenis from "@studio-freight/lenis";
@@ -70,13 +70,13 @@ export default function SectionTestimonial() {
       <main
         ref={container}
         className="relative mt-[10vh] md:mt-[-40vh] pt-[5rem] bg-gradient-to-r from-white to-gray-300">
-        <h1 className="text-4xl font-bold text-center text-[#06367F]">
+        <h1 className="text-3xl md:text-4xl font-bold text-center text-[#06367F]">
           HEAR FROM OUR CLIENTS
         </h1>
         {projects.map((project, i) => {
           const targetScale = 1 - (projects.length - i) * 0.05;
           return (
-            <CustomCard
+            <TestimonialCard
               key={`p_${i}`}
               i={i}
               {...project}

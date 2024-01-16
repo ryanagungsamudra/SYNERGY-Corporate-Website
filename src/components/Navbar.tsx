@@ -2,8 +2,9 @@
 
 // React
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Link from "next/link";
+import { SynergyContext } from "@/context";
 
 // Logo
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -20,7 +21,6 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-
 import {
   Accordion,
   AccordionContent,
@@ -32,12 +32,14 @@ export default function Navbar() {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
 
+  const { changeMenu, menu } = useContext(SynergyContext);
+
   return (
     <div className="flex p-4 px-8 fixed top-0 w-full bg-white border-b-[3px] z-[999]">
       {/* Desktop menu */}
       <div className="hidden md:flex w-full justify-between ">
         <div className="flex h-full items-center">
-          <Link href="/">
+          <Link href="/" onClick={() => changeMenu("")}>
             <Image
               className="cursor-pointer"
               src={synergyLogo}
@@ -135,11 +137,13 @@ export default function Navbar() {
           <NavigationMenuList>
             {/* Articles */}
             <NavigationMenuItem>
-              <Link href="/docs" legacyBehavior passHref>
+              <Link href="/articles" legacyBehavior passHref>
                 <NavigationMenuLink
                   className={
                     (navigationMenuTriggerStyle(),
-                    "text-[#7C7C7D] hover:text-[#181819] mr-2")
+                    `text-[#7C7C7D] hover:text-[#181819] mr-2 ${
+                      menu === "articles" ? "text-[#2b4087] font-medium" : ""
+                    }`)
                   }>
                   Articles
                 </NavigationMenuLink>
@@ -148,11 +152,13 @@ export default function Navbar() {
 
             {/* News */}
             <NavigationMenuItem>
-              <Link href="/docs" legacyBehavior passHref>
+              <Link href="/news" legacyBehavior passHref>
                 <NavigationMenuLink
                   className={
                     (navigationMenuTriggerStyle(),
-                    "text-[#7C7C7D] hover:text-[#181819] mx-4")
+                    `text-[#7C7C7D] hover:text-[#181819] mx-4 ${
+                      menu === "news" ? "text-[#2b4087] font-medium" : ""
+                    }`)
                   }>
                   News
                 </NavigationMenuLink>

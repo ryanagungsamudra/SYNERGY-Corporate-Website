@@ -8,7 +8,7 @@ import { Button } from "../ui/button";
 export default function Slide4() {
   return (
     <div className="h-[682px]">
-      <div className=" max-w-full h-[100vh] mx-auto">
+      <div className="relative max-w-full h-[100vh] mx-auto">
         <Image
           alt="slide2"
           src={require("@/app/assets/landing/skyline.jpg")}
@@ -16,6 +16,7 @@ export default function Slide4() {
           height={400}
           className="w-full h-full mt-[-1.5rem]"
         />
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       </div>
 
       <div className="p-8 pl-[3rem] md:pl-[6rem]">

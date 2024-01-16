@@ -2,7 +2,6 @@
 
 import React, { useRef } from "react";
 import Reveal from "./utils/Reveal";
-import { Card } from "./ui/card";
 
 // Framer Motion
 import { motion, useTransform, useScroll } from "framer-motion";
