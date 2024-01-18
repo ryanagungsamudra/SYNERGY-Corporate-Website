@@ -3,6 +3,8 @@ import { formatDescription } from "@/lib/formatDescription";
 import Image from "next/image";
 import React from "react";
 
+import { FaBackward } from "react-icons/fa";
+
 export default async function page({ params }: any) {
   const blog = await fetchBlog(params.newsId);
   const newsData = blog?.data?.attributes;
@@ -11,7 +13,7 @@ export default async function page({ params }: any) {
   const description = formatDescription(newsData?.Description);
 
   return (
-    <div className="px-[14rem] py-[2rem]">
+    <div className="px-6 md:px-[14rem] py-[2rem]">
       <div className="flex flex-wrap w-full justify-start">
         <div className="w-full">
           <h1 className="text-3xl font-semibold text-[#1D1D1D]">
@@ -23,7 +25,7 @@ export default async function page({ params }: any) {
         </div>
 
         <div className="w-full mt-4">
-          <div className="flex justify-center w-full h-full bg-slate-300 rounded-2xl">
+          <div className="flex justify-center w-full h-full bg-gradient-to-r from-white to-gray-300 rounded-2xl">
             <Image
               src={imageUrl}
               alt="image"
@@ -36,6 +38,13 @@ export default async function page({ params }: any) {
 
         <div className="w-full mt-8">
           <p className="text-lg text-[#1D1D1D]">{description}</p>
+        </div>
+
+        <div className="w-full mt-[6rem]">
+          <a href="/news" className="flex items-center">
+            <FaBackward className="mr-2" />
+            <span className="text-base">Back to news</span>
+          </a>
         </div>
       </div>
     </div>

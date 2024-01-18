@@ -12,10 +12,10 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import Slide1 from "./slide/Slide1";
-import Slide2 from "./slide/Slide2";
-import Slide3 from "./slide/Slide3";
-import Slide4 from "./slide/Slide4";
+import Slide1 from "./ui/custom/slide/Slide1";
+import Slide2 from "./ui/custom/slide/Slide2";
+import Slide3 from "./ui/custom/slide/Slide3";
+import Slide4 from "./ui/custom/slide/Slide4";
 
 export default function LandingCarousel() {
   return (

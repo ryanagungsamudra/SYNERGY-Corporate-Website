@@ -5,7 +5,7 @@ interface ParagraphProps {
 }
 
 const Paragraph: FC<ParagraphProps> = ({ children }) => {
-  return <p className="text-lg md:text-xl mt-4">{children}</p>;
+  return <p className="text-base md:text-base mt-4">{children}</p>;
 };
 
 interface LinkProps {

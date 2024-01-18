@@ -25,15 +25,20 @@ export default function Page() {
           height={300}
           className="w-full h-[150px] object-cover"
         />
-        <div className="absolute inset-0 flex items-center justify-center md:justify-start md:pl-[12rem]">
+        <div className="absolute inset-0 flex items-center justify-center md:justify-center">
           <h1 className="text-4xl font-bold text-white underline underline-offset-4">
-            ARTICLES
+            Articles
           </h1>
         </div>
       </div>
 
       <div className="p-[2rem] px-[4rem]">
-        <NewsCard category="Articles" />
+        <NewsCard
+          category="Articles"
+          pagination={true}
+          currentPage={1}
+          pageSize={10}
+        />
       </div>
     </>
   );

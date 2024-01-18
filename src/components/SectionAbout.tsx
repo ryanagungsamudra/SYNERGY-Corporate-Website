@@ -61,7 +61,7 @@ const CustomCard = ({ icon, title, description }: CardProps) => {
             {title}
           </h1>
         </div>
-        <p className="text-lg md:text-lg mt-4 text-center md:text-left">
+        <p className="text-lg md:text-base mt-4 text-center md:text-left">
           {description}
         </p>
       </div>
@@ -164,7 +164,7 @@ export default function SectionAbout() {
           </Reveal>
           <Reveal>
             <div className="mt-4">
-              <p className="text-lg md:text-xl">
+              <p className="text-lg md:text-base">
                 Synergy is a financial advisory firm known to be proactive,
                 progressive and reliable. We strive to be the new standard in
                 financial guidance, creating significant value for our clients.
@@ -174,7 +174,7 @@ export default function SectionAbout() {
           </Reveal>
           <Reveal>
             <div className="mt-4">
-              <p className="text-lg md:text-xl">
+              <p className="text-lg md:text-base">
                 We care for the people who care for you. Our pursuit of
                 technological updates, training roadmaps, support platforms and
                 initiatives are thoughtfully designed to develop our people’s
@@ -186,7 +186,7 @@ export default function SectionAbout() {
           </Reveal>
           <Reveal>
             <div className="mt-4">
-              <p className="text-lg md:text-xl">
+              <p className="text-lg md:text-base">
                 At Synergy, we grow collectively as one. Unity and trust
                 provides greater growth and excellence. The strong internal bond
                 between management, advisers and support staff in Synergy
@@ -207,7 +207,7 @@ export default function SectionAbout() {
           </Reveal>
           <Reveal>
             <div className="mt-4">
-              <p className="text-lg md:text-xl">
+              <p className="text-lg md:text-base">
                 We are a passionate group of intelligent and forward-looking
                 financial advisers with an eye on the markets and the future. We
                 want to be known as a trusted financial advisory firm in the
@@ -217,7 +217,7 @@ export default function SectionAbout() {
           </Reveal>
           <Reveal>
             <div className="mt-4">
-              <p className="text-lg md:text-xl">
+              <p className="text-lg md:text-base">
                 At Synergy, you will have the opportunity to offer your clients
                 customized solutions crafted from our selected list of approved
                 products from a number of major life insurance companies, as
@@ -228,7 +228,7 @@ export default function SectionAbout() {
           </Reveal>
           <Reveal>
             <div className="mt-4">
-              <p className="text-lg md:text-xl">
+              <p className="text-lg md:text-base">
                 We diligently invest in our people, training and developing
                 their competency, providing the best tools and platform, so that
                 we can better serve our clients. Foundation Training to

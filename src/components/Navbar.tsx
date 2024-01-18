@@ -137,12 +137,14 @@ export default function Navbar() {
           <NavigationMenuList>
             {/* Articles */}
             <NavigationMenuItem>
-              <Link href="/articles" legacyBehavior passHref>
+              <Link href="/articles" onClick={() => changeMenu("articles")}>
                 <NavigationMenuLink
                   className={
                     (navigationMenuTriggerStyle(),
-                    `text-[#7C7C7D] hover:text-[#181819] mr-2 ${
-                      menu === "articles" ? "text-[#2b4087] font-medium" : ""
+                    `${
+                      menu === "articles"
+                        ? "text-[#2b4087] font-medium mr-2"
+                        : "text-[#7C7C7D] hover:text-[#181819] mr-2 "
                     }`)
                   }>
                   Articles
@@ -152,12 +154,14 @@ export default function Navbar() {
 
             {/* News */}
             <NavigationMenuItem>
-              <Link href="/news" legacyBehavior passHref>
+              <Link href="/news" onClick={() => changeMenu("news")}>
                 <NavigationMenuLink
                   className={
                     (navigationMenuTriggerStyle(),
-                    `text-[#7C7C7D] hover:text-[#181819] mx-4 ${
-                      menu === "news" ? "text-[#2b4087] font-medium" : ""
+                    ` ${
+                      menu === "news"
+                        ? "text-[#2b4087] font-medium mx-4"
+                        : "text-[#7C7C7D] hover:text-[#181819] mx-4"
                     }`)
                   }>
                   News
@@ -167,11 +171,15 @@ export default function Navbar() {
 
             {/* Contact */}
             <NavigationMenuItem>
-              <Link href="/docs" legacyBehavior passHref>
+              <Link href="/contact" onClick={() => changeMenu("contact")}>
                 <NavigationMenuLink
                   className={
                     (navigationMenuTriggerStyle(),
-                    "text-[#7C7C7D] hover:text-[#181819]")
+                    ` ${
+                      menu === "contact"
+                        ? "text-[#2b4087] font-medium mx-4"
+                        : "text-[#7C7C7D] hover:text-[#181819] mx-4"
+                    }`)
                   }>
                   Contact
                 </NavigationMenuLink>
@@ -195,7 +203,7 @@ export default function Navbar() {
         </NavigationMenu>
       </div>
       {/* Hamburger */}
-      <div className="md:hidden z-50 flex w-full h-full items-center justify-between">
+      <div className="md:hidden z-[999] flex w-full h-full items-center justify-between">
         <Link href="/">
           <Image
             className="cursor-pointer"
