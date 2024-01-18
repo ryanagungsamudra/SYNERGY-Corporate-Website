@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 
 import NewsCard from "@/components/ui/custom/NewsCard";
 import { SynergyContext } from "@/context";
@@ -7,13 +7,13 @@ import { usePathname } from "next/navigation";
 import React, { useContext, useEffect } from "react";
 
 export default function Page() {
-  // const path = usePathname();
-  // const menuName = path.split("/")[1];
-  // const { changeMenu } = useContext(SynergyContext);
+  const path = usePathname();
+  const menuName = path.split("/")[1];
+  const { changeMenu } = useContext(SynergyContext);
 
-  // useEffect(() => {
-  //   changeMenu(menuName);
-  // }, []);
+  useEffect(() => {
+    changeMenu(menuName);
+  }, []);
 
   return (
     <>
@@ -33,12 +33,7 @@ export default function Page() {
       </div>
 
       <div className="p-[2rem] px-[4rem]">
-        <NewsCard
-          category="Articles"
-          pagination={true}
-          currentPage={1}
-          pageSize={10}
-        />
+        <NewsCard category="Articles" pagination={true} limit={1} offset={0} />
       </div>
     </>
   );

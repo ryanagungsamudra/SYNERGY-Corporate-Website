@@ -143,8 +143,8 @@ export default function Navbar() {
                     (navigationMenuTriggerStyle(),
                     `${
                       menu === "articles"
-                        ? "text-[#2b4087] font-medium mr-2"
-                        : "text-[#7C7C7D] hover:text-[#181819] mr-2 "
+                        ? "text-[#2b4087] font-medium mr-4"
+                        : "text-[#7C7C7D] hover:text-[#181819] mr-4 "
                     }`)
                   }>
                   Articles

@@ -1,6 +1,7 @@
+"use client";
 import Map from "@/components/ui/custom/map";
 import Link from "next/link";
-import React from "react";
+import React, { useContext, useEffect } from "react";
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -13,9 +14,18 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
+import { SynergyContext } from "@/context";
 
-export default function page() {
+export default function Page() {
+  const path = usePathname();
+  const menuName = path.split("/")[1];
+  const { changeMenu } = useContext(SynergyContext);
+
+  useEffect(() => {
+    changeMenu(menuName);
+  }, []);
+
   return (
     <>
       <Map />

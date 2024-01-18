@@ -1,16 +1,34 @@
-import { fetchBlog } from "@/config/https/blogs";
+"use client";
+
+import { fetchBlogs } from "@/config/https/blogs";
 import { formatDescription } from "@/lib/formatDescription";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { FaBackward } from "react-icons/fa";
 
-export default async function page({ params }: any) {
-  const blog = await fetchBlog(params.articlesId);
-  const newsData = blog?.data?.attributes;
+export default function Page({ params }: any) {
+  const [data, setData] = useState<any | null>(null);
+  const [imageUrl, setImageUrl] = useState<string | null>(null);
 
-  const imageUrl = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${newsData?.img?.data?.attributes?.url}`;
-  const description = formatDescription(newsData?.Description);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    fetchBlogs(`/${params.articlesId}?&populate=*`)
+      .then((res) => {
+        setData(res.data);
+        setImageUrl(res.data?.attributes?.img?.data?.attributes?.url || null);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [params.articlesId]);
+
+  const newsData = data?.attributes;
+
+  // Ensure that newsData is not null before accessing its properties
+  const description = newsData
+    ? formatDescription(newsData?.Description)
+    : null;
 
   return (
     <div className="px-[14rem] py-[2rem]">
@@ -24,17 +42,19 @@ export default async function page({ params }: any) {
           </p>
         </div>
 
-        <div className="w-full mt-4">
-          <div className="flex justify-center w-full h-full bg-gradient-to-r from-white to-gray-300 rounded-2xl">
-            <Image
-              src={imageUrl}
-              alt="image"
-              width={300}
-              height={300}
-              className="w-full h-[800px] rounded-lg object-contain "
-            />
+        {imageUrl && (
+          <div className="w-full mt-4">
+            <div className="flex justify-center w-full h-full bg-gradient-to-r from-white to-gray-300 rounded-2xl">
+              <Image
+                src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${imageUrl}`}
+                alt="image"
+                width={300}
+                height={300}
+                className="w-full h-[800px] rounded-lg object-contain"
+              />
+            </div>
           </div>
-        </div>
+        )}
 
         <div className="w-full mt-8">
           <p className="text-lg text-[#1D1D1D]">{description}</p>

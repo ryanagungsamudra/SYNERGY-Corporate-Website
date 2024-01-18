@@ -10,7 +10,7 @@ export default function SectionNews() {
 
       {/* News card */}
       <div className="px-8 pt-[3rem]">
-        <NewsCard category="News" />
+        <NewsCard category="News" limit={4} offset={0} />
       </div>
     </div>
   );

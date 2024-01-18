@@ -1,19 +1,12 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { extractFirstParagraph } from "@/lib/extractFirstParagraph";
-import { fetchBlogs } from "@/config/https/blogs";
 import Link from "next/link";
 
-// Shadcn UI
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
+import { fetchBlogs } from "@/config/https/blogs";
+import PaginationComponent from "./Pagination";
 interface NewsCardProps {
   category: string;
   attributes: any;
@@ -69,56 +62,121 @@ const NewsCardComponent = ({ category, attributes, id }: NewsCardProps) => {
   );
 };
 
-export default async function NewsCard({
+// Pagination logic
+type Blog = {
+  attributes: {
+    categories: {
+      data: {
+        attributes: {
+          Title: string;
+        };
+      }[];
+    };
+
+    createdAt: string;
+  };
+};
+
+const calculatePagination = (
+  data: Blog[],
+
+  category: string,
+
+  limit: number,
+
+  currentPage: number
+): { filteredData: Blog[]; dataLength: number; totalPages: number } => {
+  const filtered = data
+
+    ?.filter((blog: Blog) => {
+      return blog?.attributes?.categories?.data?.some(
+        (item: any) => item?.attributes?.Title === category
+      );
+    })
+
+    .sort((a: Blog, b: Blog) => {
+      return (
+        // @ts-ignore
+        new Date(b.attributes.createdAt) - new Date(a.attributes.createdAt)
+      );
+    });
+
+  const offset = (currentPage - 1) * limit;
+
+  const filteredData = filtered && filtered.slice(offset, offset + limit);
+
+  const dataLength = filtered ? filtered.length : 0;
+
+  const totalPages = Math.ceil(dataLength / limit);
+
+  return { filteredData, dataLength, totalPages };
+};
+
+export default function NewsCard({
   category,
   pagination,
-  currentPage,
-  pageSize,
+  limit = 100,
+  offset = 0,
 }: {
   category?: string;
   pagination?: boolean;
-  currentPage?: number;
-  pageSize?: number;
+  limit?: number;
+  offset?: number;
 }) {
-  const blogs = await fetchBlogs(currentPage, pageSize);
+  // Fetching data from strapi
+  const [data, setData] = useState<any[] | null>(null);
+  useEffect(() => {
+    fetchBlogs("?&populate=*")
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
-  const filteredBlog = blogs?.data?.filter((blog: any) => {
-    return blog?.attributes?.categories?.data?.some(
-      (item: any) => item?.attributes?.Title === category
-    );
+  // Pagination logic
+  const [paginationState, setPaginationState] = useState({
+    limit: limit,
+
+    offset: offset,
+
+    currentPage: 1,
   });
 
+  const { filteredData, dataLength, totalPages } = calculatePagination(
+    data || [],
+
+    category || "",
+
+    paginationState.limit,
+
+    paginationState.currentPage
+  );
+
+  const handlePageChange = (page: number) => {
+    setPaginationState((prevState) => ({
+      ...prevState,
+
+      currentPage: page,
+
+      offset: (page - 1) * paginationState.limit,
+    }));
+  };
   return (
     <>
       <div className="flex flex-wrap gap-6 w-full justify-center">
-        {filteredBlog?.map((news: any, index: number) => (
+        {filteredData?.map((news: any, index: number) => (
           <NewsCardComponent key={index} category={category} {...news} />
         ))}
         {pagination && (
-          <Pagination>
-            <PaginationContent>
-              <PaginationItem>
-                <PaginationPrevious href="#" />
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationLink href="#">1</PaginationLink>
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationLink href="#" isActive>
-                  2
-                </PaginationLink>
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationLink href="#">3</PaginationLink>
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationEllipsis />
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationNext href="#" />
-              </PaginationItem>
-            </PaginationContent>
-          </Pagination>
+          <>
+            <PaginationComponent
+              currentPage={paginationState.currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
+          </>
         )}
       </div>
     </>

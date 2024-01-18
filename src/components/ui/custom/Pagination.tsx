@@ -1,66 +1,65 @@
-import React from "react";
 import {
+  Pagination,
   PaginationContent,
   PaginationItem,
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/pagination"; // Import the correct components
+} from "@/components/ui/pagination";
 
-interface DynamicPaginationProps {
+interface PaginationProps {
   currentPage: number;
   totalPages: number;
   onPageChange: (page: number) => void;
 }
 
-const DynamicPagination: React.FC<DynamicPaginationProps> = ({
-  currentPage,
-  totalPages,
-  onPageChange,
-}) => {
-  const generatePaginationLinks = () => {
-    const links = [];
-
-    // Previous
-    links.push(
-      <PaginationItem key="previous">
-        <PaginationPrevious
-          href="#"
-          onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
-        />
-      </PaginationItem>
-    );
-
-    // Page numbers
-    for (let page = 1; page <= totalPages; page++) {
-      links.push(
-        <PaginationItem key={page}>
-          <PaginationLink
-            href="#"
-            onClick={() => onPageChange(page)}
-            isActive={currentPage === page}>
-            {page}
-          </PaginationLink>
+export default function PaginationComponent(props: PaginationProps) {
+  return (
+    <Pagination>
+      <PaginationContent>
+        <PaginationItem>
+          <PaginationPrevious
+            className={`cursor-pointer ${
+              props.currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""
+            }`}
+            onClick={() => {
+              if (props.currentPage !== 1) {
+                props.onPageChange(props.currentPage - 1);
+              } else {
+                props.onPageChange(props.currentPage);
+              }
+            }}
+          />
         </PaginationItem>
-      );
-    }
-
-    // Next
-    links.push(
-      <PaginationItem key="next">
-        <PaginationNext
-          href="#"
-          onClick={() =>
-            currentPage < totalPages && onPageChange(currentPage + 1)
-          }
-        />
-      </PaginationItem>
-    );
-
-    return links;
-  };
-
-  return <PaginationContent>{generatePaginationLinks()}</PaginationContent>;
-};
-
-export default DynamicPagination;
+        {Array.from({ length: props.totalPages }, (_, i) => i + 1).map(
+          (page) => (
+            <PaginationItem key={page}>
+              <PaginationLink
+                className="cursor-pointer"
+                onClick={() => props.onPageChange(page)}
+                isActive={props.currentPage === page}>
+                {page}
+              </PaginationLink>
+            </PaginationItem>
+          )
+        )}
+        <PaginationItem>
+          <PaginationNext
+            className={`cursor-pointer ${
+              props.currentPage === props.totalPages
+                ? "opacity-50 cursor-not-allowed"
+                : ""
+            }`}
+            onClick={() => {
+              if (props.currentPage !== props.totalPages) {
+                props.onPageChange(props.currentPage + 1);
+              } else {
+                props.onPageChange(props.currentPage);
+              }
+            }}
+          />
+        </PaginationItem>
+      </PaginationContent>
+    </Pagination>
+  );
+}
