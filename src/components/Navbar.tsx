@@ -33,7 +33,6 @@ export default function Navbar() {
   const handleClick = () => setNav(!nav);
 
   const { changeMenu, menu } = useContext(SynergyContext);
-  console.log(menu, "kontol");
 
   return (
     <div className="flex p-4 px-8 fixed top-0 w-full bg-white border-b-[3px] z-50">
@@ -55,28 +54,64 @@ export default function Navbar() {
             <NavigationMenuList>
               {/* About us */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-[#7C7C7D] hover:text-[#181819] ml-6">
+                <NavigationMenuTrigger
+                  className={`${
+                    menu === "company-profile" ||
+                    menu === "our-commitment" ||
+                    menu === "management-team" ||
+                    menu === "synergycare-committee"
+                      ? "text-[#2b4087] font-medium ml-6"
+                      : "text-[#7C7C7D] hover:text-[#181819] ml-6"
+                  }`}>
                   About Us
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-4 md:w-[250px] lg:w-[250px]">
                     <ListItem
-                      href="/profile"
+                      className={
+                        menu === "company-profile" &&
+                        "text-[#fff] bg-[#9FA7AB] flex"
+                      }
+                      onClick={() => changeMenu("company-profile")}
+                      href="/about-us/company-profile"
                       title="Company Profile"></ListItem>
                     <ListItem
-                      href="/docs/installation"
+                      className={
+                        menu === "our-commitment" &&
+                        "text-[#fff] bg-[#9FA7AB] flex"
+                      }
+                      onClick={() => changeMenu("our-commitment")}
+                      href="/about-us/our-commitment"
                       title="Our Commitment"></ListItem>
                     <ListItem
-                      href="/docs/primitives/typography"
+                      className={
+                        menu === "management-team" &&
+                        "text-[#fff] bg-[#9FA7AB] flex"
+                      }
+                      onClick={() => changeMenu("management-team")}
+                      href="/about-us/management-team"
                       title="Management Team"></ListItem>
                     <ListItem
-                      href="/docs/primitives/typography"
+                      className={
+                        menu === "ipac" && "text-[#fff] bg-[#9FA7AB] flex"
+                      }
+                      onClick={() => changeMenu("ipac")}
+                      href="/about-us/ipac"
                       title="I.P.A.C"></ListItem>{" "}
                     <ListItem
-                      href="/docs/primitives/typography"
+                      className={
+                        menu === "iac" && "text-[#fff] bg-[#9FA7AB] flex"
+                      }
+                      onClick={() => changeMenu("iac")}
+                      href="/about-us/iac"
                       title="I.A.C"></ListItem>{" "}
                     <ListItem
-                      href="/docs/primitives/typography"
+                      className={
+                        menu === "synergycare-committee" &&
+                        "text-[#fff] bg-[#9FA7AB] flex"
+                      }
+                      onClick={() => changeMenu("synergycare-committee")}
+                      href="/about-us/synergycare-committee"
                       title="SynergyCare Committee"></ListItem>
                   </ul>
                 </NavigationMenuContent>
@@ -279,76 +314,89 @@ export default function Navbar() {
                 <NavigationMenu>
                   <ul className="grid gap-3 p-4 border w-[100vw] rounded-md">
                     <ListItem
-                      href="/profile"
+                      onClick={handleClick}
+                      href="/about-us/company-profile"
                       title="Company Profile"></ListItem>
                     <ListItem
-                      href="/docs/installation"
+                      onClick={handleClick}
+                      href="/about-us/our-commitment"
                       title="Our Commitment"></ListItem>
                     <ListItem
-                      href="/docs/primitives/typography"
+                      onClick={handleClick}
+                      href="/about-us/management-team"
                       title="Management Team"></ListItem>
                     <ListItem
-                      href="/docs/primitives/typography"
+                      onClick={handleClick}
+                      href="/about-us/ipac"
                       title="I.P.A.C."></ListItem>
                     <ListItem
-                      href="/docs/primitives/typography"
+                      onClick={handleClick}
+                      href="/about-us/iac"
                       title="I.A.C."></ListItem>
                     <ListItem
-                      href="/docs/primitives/typography"
+                      onClick={handleClick}
+                      href="/about-us/synergycare-committee"
                       title="SynergyCare Committee"></ListItem>
                   </ul>
                 </NavigationMenu>
               </AccordionContent>
             </AccordionItem>
+
             <AccordionItem value="item-2">
               <AccordionTrigger>Services</AccordionTrigger>
               <AccordionContent>
                 <NavigationMenu>
                   <ul className="grid gap-3 p-4 border w-[100vw] rounded-md">
-                    <ListItem href="/profile" title="Personal"></ListItem>
                     <ListItem
-                      href="/docs/installation"
+                      onClick={handleClick}
+                      href="/services/personal"
+                      title="Personal"></ListItem>
+                    <ListItem
+                      onClick={handleClick}
+                      href="/services/corporate"
                       title="Corporate"></ListItem>
                     <ListItem
-                      href="/docs/primitives/typography"
+                      onClick={handleClick}
+                      href="/services/high-net-worth"
                       title="High Net Worth"></ListItem>
                     <ListItem
-                      href="/docs/primitives/typography"
+                      onClick={handleClick}
+                      href="/services/general-insurance"
                       title="General Insurance"></ListItem>
                   </ul>
                 </NavigationMenu>
               </AccordionContent>
             </AccordionItem>
 
-            <Link href={"/"}>
+            <Link onClick={handleClick} href={"/careers"}>
               <h5 className="font-medium cursor-pointer my-4 hover:underline">
                 Careers
               </h5>
               <hr className="border-t border-gray-300" />
             </Link>
 
-            <Link href={"/"}>
+            <Link onClick={handleClick} href={"/standards"}>
               <h5 className="font-medium cursor-pointer my-4 hover:underline">
                 Standards
               </h5>
               <hr className="border-t border-gray-300" />
             </Link>
 
-            <Link href={"/"}>
+            <Link onClick={handleClick} href={"/articles"}>
               <h5 className="font-medium cursor-pointer my-4 hover:underline">
                 Articles
               </h5>
               <hr className="border-t border-gray-300" />
             </Link>
 
-            <Link href={"/"}>
+            <Link onClick={handleClick} href={"/news"}>
               <h5 className="font-medium cursor-pointer my-4 hover:underline">
                 News
               </h5>
               <hr className="border-t border-gray-300" />
             </Link>
 
-            <Link href={"/"}>
+            <Link onClick={handleClick} href={"/contact"}>
               <h5 className="font-medium cursor-pointer my-4 hover:underline">
                 Contact
               </h5>
@@ -361,11 +409,15 @@ export default function Navbar() {
                 <NavigationMenu>
                   <ul className="grid gap-3 p-4 border w-[100vw] rounded-md">
                     <ListItem
-                      href="/profile"
+                      onClick={handleClick}
+                      href="https://1.synergy.com.sg/"
                       title="OneSynergy Login"></ListItem>
                     <hr className="border-t-[0.3px] border-gray-300" />
 
-                    <ListItem href="/docs/installation" title="Apps"></ListItem>
+                    <ListItem
+                      onClick={handleClick}
+                      href="https://synergy.com.sg/apps"
+                      title="Apps"></ListItem>
                   </ul>
                 </NavigationMenu>
               </AccordionContent>

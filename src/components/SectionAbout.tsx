@@ -85,7 +85,7 @@ export default function SectionAbout() {
   const cards = [
     {
       id: 1,
-      icon: <FaPeopleGroup className="text-white text-6xl" />,
+      icon: <FaPeopleGroup className="text-white text-3xl md:text-6xl" />,
       title: "PEOPLE",
       description: (
         <>
@@ -102,7 +102,7 @@ export default function SectionAbout() {
     },
     {
       id: 2,
-      icon: <FaRegHandshake className="text-white text-6xl" />,
+      icon: <FaRegHandshake className="text-white text-3xl md:text-6xl" />,
       title: "PROFESSIONALISM",
       description: (
         <>
@@ -117,7 +117,7 @@ export default function SectionAbout() {
     },
     {
       id: 3,
-      icon: <GiProgression className="text-white text-6xl" />,
+      icon: <GiProgression className="text-white text-3xl md:text-6xl" />,
       title: "PROGRESS",
       description: (
         <>
@@ -133,20 +133,20 @@ export default function SectionAbout() {
     },
     {
       id: 4,
-      icon: <FaEye className="text-white text-6xl" />,
+      icon: <FaEye className="text-white text-3xl md:text-6xl" />,
       title: "OUR VISION",
       description: "To be the most admired Financial Advisory firm in Asia",
     },
     {
       id: 5,
-      icon: <GoGoal className="text-white text-6xl" />,
+      icon: <GoGoal className="text-white text-3xl md:text-6xl" />,
       title: "OUR MISSION",
       description:
         "Working together to achieve financial freedom by harnessing technology and innovation",
     },
     {
       id: 6,
-      icon: <FaStar className="text-white text-6xl" />,
+      icon: <FaStar className="text-white text-3xl md:text-6xl" />,
       title: "OUR VALUES",
       description: "People, Professionalism and Progress",
     },
