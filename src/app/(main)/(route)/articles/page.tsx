@@ -1,6 +1,6 @@
 "use client";
 
-import NewsCard from "@/components/ui/custom/NewsCard";
+import NewsCard from "@/components/ui/custom/card/NewsCard";
 import { SynergyContext } from "@/context";
 import Image from "next/image";
 import { usePathname } from "next/navigation";

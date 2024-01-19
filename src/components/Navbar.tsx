@@ -35,7 +35,7 @@ export default function Navbar() {
   const { changeMenu, menu } = useContext(SynergyContext);
 
   return (
-    <div className="flex p-4 px-8 fixed top-0 w-full bg-white border-b-[3px] z-[999]">
+    <div className="flex p-4 px-8 fixed top-0 w-full bg-white border-b-[3px] z-50">
       {/* Desktop menu */}
       <div className="hidden md:flex w-full justify-between ">
         <div className="flex h-full items-center">
@@ -105,11 +105,15 @@ export default function Navbar() {
 
               {/* Careers */}
               <NavigationMenuItem>
-                <Link href="/docs" legacyBehavior passHref>
+                <Link href="/careers" onClick={() => changeMenu("careers")}>
                   <NavigationMenuLink
                     className={
                       (navigationMenuTriggerStyle(),
-                      "text-[#7C7C7D] hover:text-[#181819] pl-4")
+                      `${
+                        menu === "careers"
+                          ? "text-[#2b4087] font-medium pl-4"
+                          : "text-[#7C7C7D] hover:text-[#181819] pl-4"
+                      }`)
                     }>
                     Careers
                   </NavigationMenuLink>
@@ -118,11 +122,15 @@ export default function Navbar() {
 
               {/* Standards */}
               <NavigationMenuItem>
-                <Link href="/docs" legacyBehavior passHref>
+                <Link href="/standards" onClick={() => changeMenu("standards")}>
                   <NavigationMenuLink
                     className={
                       (navigationMenuTriggerStyle(),
-                      "text-[#7C7C7D] hover:text-[#181819] pl-8")
+                      `${
+                        menu === "standards"
+                          ? "text-[#2b4087] font-medium pl-9"
+                          : "text-[#7C7C7D] hover:text-[#181819] pl-9"
+                      }`)
                     }>
                     Standards
                   </NavigationMenuLink>
@@ -193,9 +201,13 @@ export default function Navbar() {
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-4 md:w-[250px] lg:w-[250px]">
-                  <ListItem href="/profile" title="OneSynergy Login"></ListItem>
+                  <ListItem
+                    href="https://1.synergy.com.sg/"
+                    title="OneSynergy Login"></ListItem>
                   <hr className="border-t border-gray-300" />
-                  <ListItem href="/docs/installation" title="Apps"></ListItem>
+                  <ListItem
+                    href="https://synergy.com.sg/apps"
+                    title="Apps"></ListItem>
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>

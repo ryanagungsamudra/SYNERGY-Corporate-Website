@@ -1,5 +1,5 @@
 import React from "react";
-import NewsCard from "./ui/custom/NewsCard";
+import NewsCard from "./ui/custom/card/NewsCard";
 
 export default function SectionNews() {
   return (

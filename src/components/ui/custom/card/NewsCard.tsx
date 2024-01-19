@@ -6,7 +6,7 @@ import { extractFirstParagraph } from "@/lib/extractFirstParagraph";
 import Link from "next/link";
 
 import { fetchBlogs } from "@/config/https/blogs";
-import PaginationComponent from "./Pagination";
+import PaginationComponent from "../pagination/Pagination";
 interface NewsCardProps {
   category: string;
   attributes: any;

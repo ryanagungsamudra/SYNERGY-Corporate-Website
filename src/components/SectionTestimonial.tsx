@@ -1,5 +1,5 @@
 "use client";
-import TestimonialCard from "@/components/ui/custom/TestimonialCard";
+import TestimonialCard from "@/components/ui/custom/card/TestimonialCard";
 import { useScroll } from "framer-motion";
 import { useEffect, useRef } from "react";
 import Lenis from "@studio-freight/lenis";
