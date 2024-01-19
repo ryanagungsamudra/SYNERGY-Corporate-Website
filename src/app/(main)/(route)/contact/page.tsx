@@ -2,6 +2,8 @@
 import Map from "@/components/ui/custom/map";
 import Link from "next/link";
 import React, { useContext, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { SynergyContext } from "@/context";
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -14,8 +16,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { usePathname } from "next/navigation";
-import { SynergyContext } from "@/context";
 
 export default function Page() {
   const path = usePathname();

@@ -33,6 +33,7 @@ export default function Navbar() {
   const handleClick = () => setNav(!nav);
 
   const { changeMenu, menu } = useContext(SynergyContext);
+  console.log(menu, "kontol");
 
   return (
     <div className="flex p-4 px-8 fixed top-0 w-full bg-white border-b-[3px] z-50">
@@ -83,22 +84,50 @@ export default function Navbar() {
 
               {/* Services */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-[#7C7C7D] hover:text-[#181819]">
+                <NavigationMenuTrigger
+                  className={`${
+                    menu === "personal" ||
+                    menu === "corporate" ||
+                    menu === "high-net-worth" ||
+                    menu === "general-insurance"
+                      ? "text-[#2b4087] font-medium pl-4"
+                      : "text-[#7C7C7D] hover:text-[#181819]"
+                  }`}>
                   Services
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-4 md:w-[250px] lg:w-[250px]">
-                    <ListItem href="/profile" title="Personal"></ListItem>
                     <ListItem
-                      href="/docs/installation"
-                      title="Corporate"></ListItem>
+                      onClick={() => changeMenu("personal")}
+                      href="/services/personal"
+                      title="Personal"
+                      className={
+                        menu === "personal" && "text-[#fff] bg-[#9FA7AB] flex"
+                      }></ListItem>
                     <ListItem
-                      href="/docs/primitives/typography"
-                      title="High Net Worth"></ListItem>
+                      onClick={() => changeMenu("corporate")}
+                      href="/services/corporate"
+                      title="Corporate"
+                      className={
+                        menu === "corporate" && "text-[#fff] bg-[#9FA7AB] flex"
+                      }></ListItem>
+                    <ListItem
+                      onClick={() => changeMenu("high-net-worth")}
+                      href="/services/high-net-worth"
+                      title="High Net Worth"
+                      className={
+                        menu === "high-net-worth" &&
+                        "text-[#fff] bg-[#9FA7AB] flex"
+                      }></ListItem>
                     <hr className="border-t border-gray-300" />
                     <ListItem
-                      href="/docs/primitives/typography"
-                      title="General Insurance"></ListItem>
+                      onClick={() => changeMenu("general-insurance")}
+                      href="/services/general-insurance"
+                      title="General Insurance"
+                      className={
+                        menu === "general-insurance" &&
+                        "text-[#fff] bg-[#9FA7AB] flex"
+                      }></ListItem>
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -355,7 +384,7 @@ const ListItem = React.forwardRef<
   return (
     <li>
       <NavigationMenuLink asChild>
-        <a
+        <Link
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-1 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
@@ -366,7 +395,7 @@ const ListItem = React.forwardRef<
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   );

@@ -52,7 +52,7 @@ const CustomCard = ({ icon, title, description }: CardProps) => {
     <div className="group relative h-[450px] w-[450px] overflow-hidden bg-white p-6 m-2 rounded-xl">
       <div className="flex flex-col items-center md:items-start md:mr-19 mt-8 md:mt-0">
         <div className="flex w-full justify-center">
-          <div className="flex items-center justify-center w-[6rem] h-[6rem] rounded-full bg-[#06367E]">
+          <div className="flex items-center justify-center w-[7rem] h-[7rem] rounded-full bg-[#06367E]">
             {icon}
           </div>
         </div>
@@ -85,7 +85,7 @@ export default function SectionAbout() {
   const cards = [
     {
       id: 1,
-      icon: <FaPeopleGroup className="text-white text-4xl" />,
+      icon: <FaPeopleGroup className="text-white text-6xl" />,
       title: "PEOPLE",
       description: (
         <>
@@ -102,7 +102,7 @@ export default function SectionAbout() {
     },
     {
       id: 2,
-      icon: <FaRegHandshake className="text-white text-4xl" />,
+      icon: <FaRegHandshake className="text-white text-6xl" />,
       title: "PROFESSIONALISM",
       description: (
         <>
@@ -117,7 +117,7 @@ export default function SectionAbout() {
     },
     {
       id: 3,
-      icon: <GiProgression className="text-white text-4xl" />,
+      icon: <GiProgression className="text-white text-6xl" />,
       title: "PROGRESS",
       description: (
         <>
@@ -133,20 +133,20 @@ export default function SectionAbout() {
     },
     {
       id: 4,
-      icon: <FaEye className="text-white text-4xl" />,
+      icon: <FaEye className="text-white text-6xl" />,
       title: "OUR VISION",
       description: "To be the most admired Financial Advisory firm in Asia",
     },
     {
       id: 5,
-      icon: <GoGoal className="text-white text-4xl" />,
+      icon: <GoGoal className="text-white text-6xl" />,
       title: "OUR MISSION",
       description:
         "Working together to achieve financial freedom by harnessing technology and innovation",
     },
     {
       id: 6,
-      icon: <FaStar className="text-white text-4xl" />,
+      icon: <FaStar className="text-white text-6xl" />,
       title: "OUR VALUES",
       description: "People, Professionalism and Progress",
     },
