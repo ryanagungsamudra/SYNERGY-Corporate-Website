@@ -91,13 +91,13 @@ export default function Page({ params }: any) {
 
       <div className="flex flex-wrap w-full justify-center gap-4">
         {client?.map((item: ClientProps, index: number) => (
-          <Card key={index} className="p-4 rounded-xl w-[30%]">
-            <div className="w-full h-[300px] rounded-2xl mb-6">
+          <Card key={index} className="p-4 rounded-xl w-3/4 md:w-[30%]">
+            <div className="w-full h-[250px] rounded-2xl mb-6">
               <Image
                 alt="image"
                 width={300}
                 height={300}
-                className="w-full h-full rounded-xl object-cover"
+                className="w-full h-full rounded-2xl object-cover"
                 src={require("@/app/assets/avatar-photo.jpg")}
               />
             </div>
