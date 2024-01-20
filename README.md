@@ -1,5 +1,8 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+here the strapi blog api repo
+[synergy-strapi-blog](https://github.com/ryanagungsamudra/synergy-strapi-blog)
+
 ## Getting Started
 
 First, run the development server:
