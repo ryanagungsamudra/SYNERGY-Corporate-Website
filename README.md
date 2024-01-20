@@ -1,10 +1,11 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<img width="1503" alt="image" src="https://github.com/ryanagungsamudra/SYNERGY-Corporate-Website/assets/115606537/3669b980-b025-4b2a-bb16-ad714fcd53a0">
 
-here the strapi blog api repo
+Here the repository for strapi api synergy website
 [synergy-strapi-blog](https://github.com/ryanagungsamudra/synergy-strapi-blog)
 
 ## Highlights
 
+- Build with Next Js, Typescript, Tailwind CSS, Shadcn UI, Stripe (CMS)
 - Redesign and improving UI & UX from https://synergy.com.sg website, 
 - Almost all content from the synergy website is available
 - CMS (Content Management System) with STRAPI
@@ -41,6 +42,10 @@ I am confident that my submission meets the evaluation criteria outlined in the 
 Please find detailed setup instructions and additional information in the Notion document provided: https://www.notion.so/Instructions-on-how-to-run-the-application-Ryan-Agung-Samudra-03a94da3feba429e94d6c82a4bc6e27e?pvs=4
 
 ## Getting Started
+
+## env variable
+NEXT_PUBLIC_STRAPI_API_URL=http://127.0.0.1:1337
+NEXT_PUBLIC_STRAPI_API_TOKEN=6b21e59af4862951f43443749405716e8b6ef14a383ca681d15c199d68ca85c10123b58dd53205426289cdbf4ec464fbcc237506622794d7bca78d2d63393d253c1f04618202b54b42303e6ab9e09090ff97d5b3225b88c2c4625848dc6b888398318fb61d11aa42da54e57e70836967334ceb6c99daaa082042876cffeda770
 
 First, run the development server:
 
