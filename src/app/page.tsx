@@ -1,3 +1,5 @@
+"use client";
+
 import Footer from "@/components/Footer";
 import LandingCarousel from "@/components/LandingCarousel";
 import Navbar from "@/components/Navbar";
@@ -6,7 +8,7 @@ import SectionEnd from "@/components/SectionEnd";
 import SectionNews from "@/components/SectionNews";
 import SectionTestimonial from "@/components/SectionTestimonial";
 
-export default async function Home() {
+export default function Home() {
   return (
     <>
       <header>

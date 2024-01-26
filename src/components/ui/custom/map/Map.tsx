@@ -9,6 +9,9 @@ import "leaflet/dist/leaflet.css";
 import Image from "next/image";
 import Link from "next/link";
 
+// Images
+import synergyLogo from "@/app/assets/synergy-logo.png";
+
 export default function page() {
   return (
     <>
@@ -18,10 +21,6 @@ export default function page() {
           zoom={20}
           style={{ width: "100%", height: "400px" }}
           scrollWheelZoom={true}>
-          {/* <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          /> */}
           <TileLayer
             url="http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}"
             subdomains={["mt0", "mt1", "mt2", "mt3"]}
@@ -39,7 +38,7 @@ export default function page() {
                   width={400}
                   height={400}
                   alt="SYNERGY LOGO"
-                  src={require("@/app/assets/synergy-logo.png")}
+                  src={synergyLogo}
                   className="w-[400px] h-[400px]]"
                 />
 

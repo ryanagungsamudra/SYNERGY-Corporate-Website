@@ -30,6 +30,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import Image from "next/image";
 
+// Images
+import vision from "@/app/assets/vision.jpg";
+
 export default function Page() {
   const path = usePathname();
   const menuName = path.split("/")[1];
@@ -42,7 +45,7 @@ export default function Page() {
     <>
       <div className="relative w-full h-[20vh] mt-[-1.3rem]">
         <Image
-          src={require("@/app/assets/vision.jpg")}
+          src={vision}
           alt="Careers"
           className="w-full h-full object-cover object-top"
         />

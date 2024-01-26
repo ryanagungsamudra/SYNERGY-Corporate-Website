@@ -6,6 +6,9 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React, { useContext, useEffect } from "react";
 
+// Images
+import bgNews from "@/app/assets/bg-news.jpg";
+
 export default function Page() {
   const path = usePathname();
   const menuName = path.split("/")[1];
@@ -19,7 +22,7 @@ export default function Page() {
     <>
       <div className="mt-[-1.5rem] relative">
         <Image
-          src={require("@/app/assets/bg-news.jpg")}
+          src={bgNews}
           alt="image"
           width={300}
           height={300}
@@ -33,7 +36,7 @@ export default function Page() {
       </div>
 
       <div className="p-[2rem] px-[4rem]">
-        <NewsCard category="Articles" pagination={true} limit={1} offset={0} />
+        <NewsCard category="Articles" pagination={true} limit={2} offset={0} />
       </div>
     </>
   );

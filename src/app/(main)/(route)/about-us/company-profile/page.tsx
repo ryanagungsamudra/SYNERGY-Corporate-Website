@@ -14,6 +14,17 @@ import { FaEye } from "react-icons/fa6";
 import { GoGoal } from "react-icons/go";
 import { FaStar } from "react-icons/fa";
 
+// Images
+import discussionImage from "@/app/assets/page/services/discussion.jpg";
+import bulbImage from "@/app/assets/page/services/bulb.jpg";
+import sme500 from "@/app/assets/sponsorship/sme500-2023.png";
+import skillsfuture from "@/app/assets/sponsorship/skillsfuture.png";
+import dataTrustmark from "@/app/assets/sponsorship/data-trustmark.png";
+import sqcStar from "@/app/assets/sponsorship/sqc_star.png";
+import spba2021 from "@/app/assets/sponsorship/spba2021-logo.png";
+import iso27001 from "@/app/assets/sponsorship/iso_27001.png";
+import iso9001 from "@/app/assets/sponsorship/iso_9001.png";
+
 interface CardProps {
   icon: JSX.Element;
   title: string;
@@ -116,7 +127,7 @@ export default function Page() {
       <div className="relative w-full h-full mt-[-1.3rem]">
         <div className="relative bg-gradient-to-r from-[#7297CA] to-[#97C6CD]">
           <Image
-            src={require("@/app/assets/page/services/discussion.jpg")}
+            src={discussionImage}
             alt="Careers"
             className="w-full h-[160px] object-cover object-top"
           />
@@ -133,7 +144,7 @@ export default function Page() {
         <div className="flex flex-wrap md:flex-nowrap gap-4 mt-6 h-full items-center">
           <div className="w-full md:w-[50%]">
             <Image
-              src={require("@/app/assets/page/services/bulb.jpg")}
+              src={bulbImage}
               alt="Insurance"
               className="w-full h-full object-cover object-top rounded-xl"
             />
@@ -168,7 +179,7 @@ export default function Page() {
             <div className="w-[30%] md:w-[15%]">
               <Image
                 alt="sponsorship"
-                src={require("@/app/assets/sponsorship/sme500-2023.png")}
+                src={sme500}
                 layout="responsive"
                 width={120}
                 height={120}
@@ -178,7 +189,7 @@ export default function Page() {
             <div className="w-[30%] md:w-[15%]">
               <Image
                 alt="sponsorship"
-                src={require("@/app/assets/sponsorship/skillsfuture.png")}
+                src={skillsfuture}
                 layout="responsive"
                 width={120}
                 height={120}
@@ -188,7 +199,7 @@ export default function Page() {
             <div className="w-[30%] md:w-[15%]">
               <Image
                 alt="sponsorship"
-                src={require("@/app/assets/sponsorship/data-trustmark.png")}
+                src={dataTrustmark}
                 layout="responsive"
                 width={120}
                 height={120}
@@ -198,7 +209,7 @@ export default function Page() {
             <div className="w-[30%] md:w-[15%]">
               <Image
                 alt="sponsorship"
-                src={require("@/app/assets/sponsorship/sqc_star.png")}
+                src={sqcStar}
                 layout="responsive"
                 width={120}
                 height={120}
@@ -208,7 +219,7 @@ export default function Page() {
             <div className="w-[30%] md:w-[15%]">
               <Image
                 alt="sponsorship"
-                src={require("@/app/assets/sponsorship/spba2021-logo.png")}
+                src={spba2021}
                 layout="responsive"
                 width={120}
                 height={120}
@@ -219,7 +230,7 @@ export default function Page() {
               <div className="w-[50%]">
                 <Image
                   alt="sponsorship"
-                  src={require("@/app/assets/sponsorship/iso_27001.png")}
+                  src={iso27001}
                   layout="responsive"
                   width={120}
                   height={120}
@@ -229,7 +240,7 @@ export default function Page() {
               <div className="w-[50%]">
                 <Image
                   alt="sponsorship"
-                  src={require("@/app/assets/sponsorship/iso_9001.png")}
+                  src={iso9001}
                   layout="responsive"
                   width={120}
                   height={120}

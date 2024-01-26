@@ -1,15 +1,15 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
-import NewsCard from "@/components/ui/custom/card/NewsCard";
 import { fetchAdvisers } from "@/config/https/testimonial";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-export default function Page({ params }: any) {
-  console.log(params.name);
+// Images
+import discussion from "@/app/assets/page/services/discussion.jpg";
+import avatarPhoto from "@/app/assets/avatar-photo.jpg";
 
+export default function Page({ params }: any) {
   interface adviser {
     name: string;
     job: string;
@@ -55,7 +55,7 @@ export default function Page({ params }: any) {
     <>
       <div className="mt-[-1.5rem] relative">
         <Image
-          src={require("@/app/assets/page/services/discussion.jpg")}
+          src={discussion}
           alt="image"
           width={300}
           height={300}
@@ -98,7 +98,7 @@ export default function Page({ params }: any) {
                 width={300}
                 height={300}
                 className="w-full h-full rounded-2xl object-cover"
-                src={require("@/app/assets/avatar-photo.jpg")}
+                src={avatarPhoto}
               />
             </div>
             <h1 className="text-center text-2xl font-medium">

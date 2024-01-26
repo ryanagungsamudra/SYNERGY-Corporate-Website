@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Card, CardContent } from "./ui/card";
 import Image from "next/image";
@@ -5,6 +7,15 @@ import Link from "next/link";
 
 // Icons
 import { FaFacebookSquare, FaLinkedin, FaInstagram } from "react-icons/fa";
+
+// Images
+import sme500 from "@/app/assets/sponsorship/sme500-2023.png";
+import skillsfuture from "@/app/assets/sponsorship/skillsfuture.png";
+import datatrustmark from "@/app/assets/sponsorship/data-trustmark.png";
+import sqcstar from "@/app/assets/sponsorship/sqc_star.png";
+import spba2021 from "@/app/assets/sponsorship/spba2021-logo.png";
+import iso27001 from "@/app/assets/sponsorship/iso_27001.png";
+import iso9001 from "@/app/assets/sponsorship/iso_9001.png";
 
 export default function Footer() {
   return (
@@ -123,7 +134,7 @@ export default function Footer() {
           <div className="w-[30%]">
             <Image
               alt="sponsorship"
-              src={require("@/app/assets/sponsorship/sme500-2023.png")}
+              src={sme500}
               layout="responsive"
               width={120}
               height={120}
@@ -133,7 +144,7 @@ export default function Footer() {
           <div className="w-[30%]">
             <Image
               alt="sponsorship"
-              src={require("@/app/assets/sponsorship/skillsfuture.png")}
+              src={skillsfuture}
               layout="responsive"
               width={120}
               height={120}
@@ -143,7 +154,7 @@ export default function Footer() {
           <div className="w-[30%]">
             <Image
               alt="sponsorship"
-              src={require("@/app/assets/sponsorship/data-trustmark.png")}
+              src={datatrustmark}
               layout="responsive"
               width={120}
               height={120}
@@ -153,7 +164,7 @@ export default function Footer() {
           <div className="w-[30%]">
             <Image
               alt="sponsorship"
-              src={require("@/app/assets/sponsorship/sqc_star.png")}
+              src={sqcstar}
               layout="responsive"
               width={120}
               height={120}
@@ -163,7 +174,7 @@ export default function Footer() {
           <div className="w-[30%]">
             <Image
               alt="sponsorship"
-              src={require("@/app/assets/sponsorship/spba2021-logo.png")}
+              src={spba2021}
               layout="responsive"
               width={120}
               height={120}
@@ -174,7 +185,7 @@ export default function Footer() {
             <div className="w-[50%]">
               <Image
                 alt="sponsorship"
-                src={require("@/app/assets/sponsorship/iso_27001.png")}
+                src={iso27001}
                 layout="responsive"
                 width={120}
                 height={120}
@@ -184,7 +195,7 @@ export default function Footer() {
             <div className="w-[50%]">
               <Image
                 alt="sponsorship"
-                src={require("@/app/assets/sponsorship/iso_9001.png")}
+                src={iso9001}
                 layout="responsive"
                 width={120}
                 height={120}

@@ -3,13 +3,16 @@
 import Image from "next/image";
 import React from "react";
 
+// Images
+import skillsfuture from "@/app/assets/landing/sfa-skillsfuture.jpg";
+
 export default function Slide2() {
   return (
     <div className="h-[682px]">
       <div className="hidden md:block max-w-full max-h-full mx-auto">
         <Image
           alt="slide2"
-          src={require("@/app/assets/landing/sfa-skillsfuture.jpg")}
+          src={skillsfuture}
           width={400}
           height={400}
           className="w-full h-full mt-[-1.5rem]"
@@ -33,7 +36,7 @@ export default function Slide2() {
         <div className="w-full">
           <Image
             alt="slide2"
-            src={require("@/app/assets/landing/sfa-skillsfuture.jpg")}
+            src={skillsfuture}
             width={400}
             height={400}
             className="w-full h-full mt-[-1.5rem]"

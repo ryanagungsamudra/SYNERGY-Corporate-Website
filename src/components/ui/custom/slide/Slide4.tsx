@@ -5,13 +5,20 @@ import React from "react";
 import { Card, CardContent } from "../../card";
 import { Button } from "../../button";
 
+// Images
+import skyline from "@/app/assets/landing/skyline.jpg";
+import dataTrustmark from "@/app/assets/landing/data-trustmark.png";
+import sqcStar from "@/app/assets/landing/sqc_star.png";
+import iso9001 from "@/app/assets/landing/iso_9001.png";
+import iso27001 from "@/app/assets/landing/iso_27001.png";
+
 export default function Slide4() {
   return (
     <div className="h-[682px]">
       <div className="relative max-w-full h-[100vh] mx-auto">
         <Image
           alt="slide2"
-          src={require("@/app/assets/landing/skyline.jpg")}
+          src={skyline}
           width={400}
           height={400}
           className="w-full h-full mt-[-1.5rem]"
@@ -40,28 +47,16 @@ export default function Slide4() {
         <Card className="bg-white w-[430px] h-[120px] md:w-[700px] md:h-[150px] absolute bottom-[5.5rem] md:bottom-[6rem]">
           <CardContent className="flex w-full h-full justify-around items-center">
             <div className="w-[30%]">
-              <Image
-                alt="logo"
-                src={require("@/app/assets/landing/data-trustmark.png")}
-              />
+              <Image alt="logo" src={dataTrustmark} />
             </div>
             <div className="w-[30%]">
-              <Image
-                alt="logo"
-                src={require("@/app/assets/landing/sqc_star.png")}
-              />
+              <Image alt="logo" src={sqcStar} />
             </div>
             <div className="w-[80px] h-[80px]">
-              <Image
-                alt="logo"
-                src={require("@/app/assets/landing/iso_9001.png")}
-              />
+              <Image alt="logo" src={iso9001} />
             </div>
             <div className="w-[80px] h-[80px]">
-              <Image
-                alt="logo"
-                src={require("@/app/assets/landing/iso_27001.png")}
-              />
+              <Image alt="logo" src={iso27001} />
             </div>
           </CardContent>
         </Card>

@@ -18,6 +18,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
+// Images
+import rainbowumbrella from "@/app/assets/page/services/rainbowumbrella.jpg";
+
 export default function Page() {
   const path = usePathname();
   const menuName = path.split("/")[2];
@@ -31,7 +34,7 @@ export default function Page() {
       <div className="relative w-full h-full mt-[-1.3rem]">
         <div className="relative bg-gradient-to-r from-[#7297CA] to-[#97C6CD]">
           <Image
-            src={require("@/app/assets/page/services/rainbowumbrella.jpg")}
+            src={rainbowumbrella}
             alt="Careers"
             className="w-full h-[160px] object-cover object-top"
           />

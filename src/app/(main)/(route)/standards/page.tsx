@@ -15,6 +15,27 @@ import {
 import { usePathname } from "next/navigation";
 import { SynergyContext } from "@/context";
 
+// Images
+import standards from "@/app/assets/page/standards/standards-main-banner.jpg";
+import bannerGeneral from "@/app/assets/page/standards/banner-general.jpg";
+import wageIncrementRate from "@/app/assets/page/standards/wage-increment-rate.png";
+import monthlyBonus from "@/app/assets/page/standards/number-of-months-of-bonus.png";
+import bannerRates from "@/app/assets/page/standards/banner-rates.jpg";
+import inflationRate from "@/app/assets/page/standards/inflation-rate.png";
+import rorCash from "@/app/assets/page/standards/ror-cash.png";
+import rorEquity from "@/app/assets/page/standards/ror-equity.png";
+import rorFixedIncome from "@/app/assets/page/standards/ror-fixed-income.png";
+import propertyCapitalReturn from "@/app/assets/page/standards/property-capital-return.png";
+import rorCpf from "@/app/assets/page/standards/ror-cpf.png";
+import bannerRp from "@/app/assets/page/standards/banner-rp.jpg";
+import lifeExpectancy from "@/app/assets/page/standards/life-expectancy.png";
+import bannerCe from "@/app/assets/page/standards/banner-ce.jpg";
+import local from "@/app/assets/page/standards/4-local.png";
+import inflation from "@/app/assets/page/standards/4-local-inflation.png";
+import australia from "@/app/assets/page/standards/4-australia.png";
+import uk from "@/app/assets/page/standards/4-uk.png";
+import us from "@/app/assets/page/standards/4-us.png";
+
 interface DialogItemProps {
   title: string;
   titleBold?: boolean;
@@ -134,7 +155,7 @@ export default function Page() {
     <div className="mt-[-1.3rem]">
       <div className="bg-gradient-to-r from-[#7297CA] to-[#97C6CD]">
         <Image
-          src={require("@/app/assets/page/standards/standards-main-banner.jpg")}
+          src={standards}
           alt="standards"
           width={1920}
           height={1080}
@@ -145,7 +166,7 @@ export default function Page() {
       <div className="flex flex-wrap w-full justify-center gap-4 my-8">
         <Card className="flex flex-col text-center border rounded-lg h-full">
           <Image
-            src={require("@/app/assets/page/standards/banner-general.jpg")}
+            src={bannerGeneral}
             alt="standards"
             width={400}
             height={400}
@@ -190,10 +211,7 @@ export default function Page() {
             }
             component={
               <>
-                <Image
-                  alt="wage"
-                  src={require("@/app/assets/page/standards/wage-increment-rate.png")}
-                />
+                <Image alt="wage" src={wageIncrementRate} />
               </>
             }
           />
@@ -209,10 +227,7 @@ export default function Page() {
             }
             component={
               <>
-                <Image
-                  alt="wage"
-                  src={require("@/app/assets/page/standards/number-of-months-of-bonus.png")}
-                />
+                <Image alt="wage" src={monthlyBonus} />
               </>
             }
           />
@@ -220,7 +235,7 @@ export default function Page() {
 
         <Card className="flex flex-col text-center border rounded-lg h-full">
           <Image
-            src={require("@/app/assets/page/standards/banner-rates.jpg")}
+            src={bannerRates}
             alt="standards"
             width={400}
             height={400}
@@ -240,10 +255,7 @@ export default function Page() {
             }
             component={
               <>
-                <Image
-                  alt="wage"
-                  src={require("@/app/assets/page/standards/inflation-rate.png")}
-                />
+                <Image alt="wage" src={inflationRate} />
               </>
             }
           />
@@ -282,10 +294,7 @@ export default function Page() {
             }
             component={
               <>
-                <Image
-                  alt="wage"
-                  src={require("@/app/assets/page/standards/ror-cash.png")}
-                />
+                <Image alt="wage" src={rorCash} />
               </>
             }
           />
@@ -306,10 +315,7 @@ export default function Page() {
             }
             component={
               <>
-                <Image
-                  alt="wage"
-                  src={require("@/app/assets/page/standards/ror-equity.png")}
-                />
+                <Image alt="wage" src={rorEquity} />
               </>
             }
           />
@@ -330,10 +336,7 @@ export default function Page() {
             }
             component={
               <>
-                <Image
-                  alt="wage"
-                  src={require("@/app/assets/page/standards/ror-fixed-income.png")}
-                />
+                <Image alt="wage" src={rorFixedIncome} />
               </>
             }
           />
@@ -353,10 +356,7 @@ export default function Page() {
             }
             component={
               <>
-                <Image
-                  alt="wage"
-                  src={require("@/app/assets/page/standards/property-capital-return.png")}
-                />
+                <Image alt="wage" src={propertyCapitalReturn} />
               </>
             }
           />
@@ -377,10 +377,7 @@ export default function Page() {
             }
             component={
               <>
-                <Image
-                  alt="wage"
-                  src={require("@/app/assets/page/standards/ror-cpf.png")}
-                />
+                <Image alt="wage" src={rorCpf} />
               </>
             }
           />
@@ -388,7 +385,7 @@ export default function Page() {
 
         <Card className="flex flex-col text-center border rounded-lg h-full">
           <Image
-            src={require("@/app/assets/page/standards/banner-rp.jpg")}
+            src={bannerRp}
             alt="standards"
             width={400}
             height={400}
@@ -405,10 +402,7 @@ export default function Page() {
             }
             component={
               <>
-                <Image
-                  alt="wage"
-                  src={require("@/app/assets/page/standards/life-expectancy.png")}
-                />
+                <Image alt="wage" src={lifeExpectancy} />
               </>
             }
           />
@@ -431,7 +425,7 @@ export default function Page() {
 
         <Card className="flex flex-col text-center border rounded-lg h-full">
           <Image
-            src={require("@/app/assets/page/standards/banner-ce.jpg")}
+            src={bannerCe}
             alt="standards"
             width={400}
             height={400}
@@ -459,10 +453,7 @@ export default function Page() {
             }
             component={
               <>
-                <Image
-                  alt="wage"
-                  src={require("@/app/assets/page/standards/4-local.png")}
-                />
+                <Image alt="wage" src={local} />
               </>
             }
           />
@@ -490,10 +481,7 @@ export default function Page() {
             }
             component={
               <>
-                <Image
-                  alt="wage"
-                  src={require("@/app/assets/page/standards/4-australia.png")}
-                />
+                <Image alt="wage" src={australia} />
               </>
             }
           />
@@ -520,10 +508,7 @@ export default function Page() {
             }
             component={
               <>
-                <Image
-                  alt="wage"
-                  src={require("@/app/assets/page/standards/4-uk.png")}
-                />
+                <Image alt="wage" src={uk} />
               </>
             }
           />
@@ -549,10 +534,7 @@ export default function Page() {
             }
             component={
               <>
-                <Image
-                  alt="wage"
-                  src={require("@/app/assets/page/standards/4-us.png")}
-                />
+                <Image alt="wage" src={us} />
               </>
             }
           />
@@ -577,10 +559,7 @@ export default function Page() {
             }
             component={
               <>
-                <Image
-                  alt="wage"
-                  src={require("@/app/assets/page/standards/4-local-inflation.png")}
-                />
+                <Image alt="wage" src={inflation} />
               </>
             }
           />

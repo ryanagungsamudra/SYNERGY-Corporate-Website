@@ -4,25 +4,23 @@ import Image from "next/image";
 import React from "react";
 import { Button } from "../../button";
 
+// Images
+import dpmt from "@/app/assets/landing/dptm-bg.png";
+import dptmWhite from "@/app/assets/landing/dptm-white.png";
+import dptmSquare from "@/app/assets/landing/dptm-square.png";
+
 export default function Slide3() {
   return (
     <div className="relative h-[682px] flex items-start justify-center">
       <div className="relative w-full h-[682px] hidden md:block">
-        <Image
-          alt="background"
-          src={require("@/app/assets/landing/dptm-bg.png")}
-        />
+        <Image alt="background" src={dpmt} />
       </div>
 
       <div className="absolute top-[2rem] hidden md:flex gap-[6rem]">
         <div className="flex h-full items-center">
           <div className="relative w-full h-full">
             <div className="w-[250px] mb-6 md:mb-0 md:w-[330px] md:h-[330px] rounded-md">
-              <Image
-                alt="overlay"
-                src={require("@/app/assets/landing/dptm-white.png")}
-                className="rounded-md"
-              />
+              <Image alt="overlay" src={dptmWhite} className="rounded-md" />
             </div>
           </div>
 
@@ -32,7 +30,7 @@ export default function Slide3() {
                 <div className="w-[400px] h-[400px] md:w-[520px] md:h-[520px] rounded-md">
                   <Image
                     alt="overlay"
-                    src={require("@/app/assets/landing/dptm-square.png")}
+                    src={dptmSquare}
                     width={400}
                     height={400}
                     className="rounded-lg"
@@ -68,7 +66,7 @@ export default function Slide3() {
         <div className="w-full">
           <Image
             alt="overlay"
-            src={require("@/app/assets/landing/dptm-square.png")}
+            src={dptmSquare}
             width={300}
             height={300}
             className="rounded-lg"

@@ -6,6 +6,10 @@ import { SynergyContext } from "@/context";
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
 
+// Images
+import timepiece from "@/app/assets/page/services/timepiece.jpg";
+import clock from "@/app/assets/page/services/clock.jpg";
+
 export default function Page() {
   const path = usePathname();
   const menuName = path.split("/")[2];
@@ -19,7 +23,7 @@ export default function Page() {
       <div className="relative w-full h-full mt-[-1.3rem]">
         <div className="relative bg-gradient-to-r from-[#7297CA] to-[#97C6CD]">
           <Image
-            src={require("@/app/assets/page/services/timepiece.jpg")}
+            src={timepiece}
             alt="Careers"
             className="w-full h-[160px] object-cover object-top"
           />
@@ -36,7 +40,7 @@ export default function Page() {
         <div className="flex flex-wrap md:flex-nowrap gap-4 mt-6 h-full items-center">
           <div className="w-full md:w-[50%]">
             <Image
-              src={require("@/app/assets/page/services/clock.jpg")}
+              src={clock}
               alt="Insurance"
               className="w-full h-full object-cover object-top rounded-xl"
             />

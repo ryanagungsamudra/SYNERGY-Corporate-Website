@@ -13,7 +13,6 @@ interface CardProps {
   clientOf: string;
   advisorId: number;
   src: string;
-  url: string;
   color: string;
   progress: any;
   range: any;
@@ -28,7 +27,6 @@ const TestimonialCard = ({
   clientOf,
   advisorId,
   src,
-  url,
   color,
   progress,
   range,
@@ -49,6 +47,11 @@ const TestimonialCard = ({
       ? description.substring(0, 500) + "..."
       : description;
 
+  const truncatedDescMobile =
+    description && description.length > 200
+      ? description.substring(0, 200) + "..."
+      : description;
+
   return (
     <div ref={container} className={`${styles.cardContainer} p-4 md:p-0`}>
       <motion.div
@@ -64,21 +67,19 @@ const TestimonialCard = ({
 
         <div className={`${styles.body} gap-[10px] md:gap-[50px]`}>
           <div className={`${styles.description}`}>
-            <p className="text-[13px] md:text-[18px] text-start">
+            <p className="hidden md:block text-[18px] text-start">
               {truncatedDesc}
             </p>
+            <p className="block md:hidden text-[13px] text-start">
+              {truncatedDescMobile}
+            </p>
             <div className="absolute bottom-0 md:left-[0rem]">
-              <Link href={`/advisers/${advisorId}`}>
+              <Link href={`/advisers/${advisorId}`} target="_blank">
                 <button className="flex h-[40px] md:w-[500px] justify-center items-center gap-2 rounded-2xl border-2 border-dashed border-black bg-white px-4 py-4 font-semibold uppercase text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none">
                   <h4 className="text-[12px] md:text-[14px] flex gap-2">
                     CLIENT OF{" "}
-                    <span>
-                      <a
-                        href={url}
-                        target="_blank"
-                        className="text-[#234A8C] text-[12px] md:text-[14px]">
-                        {clientOf}
-                      </a>
+                    <span className="text-[#234A8C] text-[12px] md:text-[14px]">
+                      {clientOf}
                     </span>
                   </h4>
                 </button>

@@ -1,11 +1,6 @@
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
+"use client";
+
+import { Button } from "../../button";
 
 interface PaginationProps {
   currentPage: number;
@@ -15,11 +10,11 @@ interface PaginationProps {
 
 export default function PaginationComponent(props: PaginationProps) {
   return (
-    <Pagination>
-      <PaginationContent>
-        <PaginationItem>
-          <PaginationPrevious
-            className={`cursor-pointer ${
+    <div className="flex items-center justify-center my-4 w-full">
+      <ul className="flex gap-8 h-full items-center">
+        <li>
+          <Button
+            className={`cursor-pointer w-[80px] bg-[#024C8E] hover:bg-[#4979a2] ${
               props.currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""
             }`}
             onClick={() => {
@@ -28,24 +23,28 @@ export default function PaginationComponent(props: PaginationProps) {
               } else {
                 props.onPageChange(props.currentPage);
               }
-            }}
-          />
-        </PaginationItem>
+            }}>
+            Previous
+          </Button>
+        </li>
         {Array.from({ length: props.totalPages }, (_, i) => i + 1).map(
           (page) => (
-            <PaginationItem key={page}>
-              <PaginationLink
-                className="cursor-pointer"
-                onClick={() => props.onPageChange(page)}
-                isActive={props.currentPage === page}>
+            <li key={page}>
+              <button
+                className={`cursor-pointer text-lg ${
+                  props.currentPage === page
+                    ? "font-bold underline"
+                    : "hover:underline"
+                }`}
+                onClick={() => props.onPageChange(page)}>
                 {page}
-              </PaginationLink>
-            </PaginationItem>
+              </button>
+            </li>
           )
         )}
-        <PaginationItem>
-          <PaginationNext
-            className={`cursor-pointer ${
+        <li>
+          <Button
+            className={`cursor-pointer w-[80px] bg-[#024C8E] hover:bg-[#4979a2] ${
               props.currentPage === props.totalPages
                 ? "opacity-50 cursor-not-allowed"
                 : ""
@@ -56,10 +55,11 @@ export default function PaginationComponent(props: PaginationProps) {
               } else {
                 props.onPageChange(props.currentPage);
               }
-            }}
-          />
-        </PaginationItem>
-      </PaginationContent>
-    </Pagination>
+            }}>
+            Next
+          </Button>
+        </li>
+      </ul>
+    </div>
   );
 }

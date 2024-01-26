@@ -1,5 +1,3 @@
-"use client";
-
 interface Paragraph {
   type: string;
   children: { type: string; text: string }[];

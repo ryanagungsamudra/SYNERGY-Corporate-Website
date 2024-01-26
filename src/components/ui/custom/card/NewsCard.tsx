@@ -2,11 +2,11 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { extractFirstParagraph } from "@/lib/extractFirstParagraph";
 import Link from "next/link";
 
 import { fetchBlogs } from "@/config/https/blogs";
 import PaginationComponent from "../pagination/Pagination";
+import { extractFirstParagraph } from "@/lib/extractFirstParagraph";
 interface NewsCardProps {
   category: string;
   attributes: any;
@@ -79,9 +79,7 @@ type Blog = {
 
 const calculatePagination = (
   data: Blog[],
-
   category: string,
-
   limit: number,
 
   currentPage: number
@@ -102,11 +100,8 @@ const calculatePagination = (
     });
 
   const offset = (currentPage - 1) * limit;
-
   const filteredData = filtered && filtered.slice(offset, offset + limit);
-
   const dataLength = filtered ? filtered.length : 0;
-
   const totalPages = Math.ceil(dataLength / limit);
 
   return { filteredData, dataLength, totalPages };
@@ -138,28 +133,21 @@ export default function NewsCard({
   // Pagination logic
   const [paginationState, setPaginationState] = useState({
     limit: limit,
-
     offset: offset,
-
     currentPage: 1,
   });
 
   const { filteredData, dataLength, totalPages } = calculatePagination(
     data || [],
-
     category || "",
-
     paginationState.limit,
-
     paginationState.currentPage
   );
 
   const handlePageChange = (page: number) => {
     setPaginationState((prevState) => ({
       ...prevState,
-
       currentPage: page,
-
       offset: (page - 1) * paginationState.limit,
     }));
   };
@@ -170,13 +158,11 @@ export default function NewsCard({
           <NewsCardComponent key={index} category={category} {...news} />
         ))}
         {pagination && (
-          <>
-            <PaginationComponent
-              currentPage={paginationState.currentPage}
-              totalPages={totalPages}
-              onPageChange={handlePageChange}
-            />
-          </>
+          <PaginationComponent
+            currentPage={paginationState.currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
         )}
       </div>
     </>

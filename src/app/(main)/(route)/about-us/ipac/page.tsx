@@ -3,14 +3,16 @@
 import React, { useContext, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { SynergyContext } from "@/context";
-import Image from "next/image";
-import { Card } from "@/components/ui/card";
+import Image, { ImageProps } from "next/image";
+
+// Images
+import taps from "@/app/assets/taps.jpg";
 
 interface PersonCardProps {
   name: string;
   title: string;
   degree: string;
-  image: string;
+  image: ImageProps["src"];
 }
 const PersonCard: React.FC<PersonCardProps> = ({
   title,
@@ -89,7 +91,7 @@ export default function Page() {
       <div className="relative w-full h-full mt-[-1.3rem]">
         <div className="relative bg-gradient-to-r from-[#7297CA] to-[#97C6CD]">
           <Image
-            src={require("@/app/assets/taps.jpg")}
+            src={taps}
             alt="Careers"
             className="w-full h-[200px] object-cover object-top"
           />

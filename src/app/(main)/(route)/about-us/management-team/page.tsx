@@ -4,7 +4,9 @@ import React, { useContext, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { SynergyContext } from "@/context";
 import Image from "next/image";
-import { Card } from "@/components/ui/card";
+
+// Images
+import boardroom from "@/app/assets/page/about/boardroom.jpg";
 
 interface PersonCardProps {
   name: string;
@@ -152,7 +154,7 @@ export default function Page() {
       <div className="relative w-full h-full mt-[-1.3rem]">
         <div className="relative bg-gradient-to-r from-[#7297CA] to-[#97C6CD]">
           <Image
-            src={require("@/app/assets/page/about/boardroom.jpg")}
+            src={boardroom}
             alt="Careers"
             className="w-full h-[200px] object-cover object-top"
           />

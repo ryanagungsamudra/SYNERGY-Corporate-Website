@@ -3,6 +3,7 @@
 import { fetchBlogs } from "@/config/https/blogs";
 import { formatDescription } from "@/lib/formatDescription";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 import { FaBackward } from "react-icons/fa";
@@ -61,10 +62,10 @@ export default function Page({ params }: any) {
         </div>
 
         <div className="w-full mt-[6rem]">
-          <a href="/articles" className="flex items-center">
+          <Link href="/articles" className="flex items-center">
             <FaBackward className="mr-2" />
             <span className="text-base">Back to articles</span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

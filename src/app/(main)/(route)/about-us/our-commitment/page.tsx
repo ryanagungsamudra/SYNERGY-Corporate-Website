@@ -4,7 +4,9 @@ import React, { useContext, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { SynergyContext } from "@/context";
 import Image from "next/image";
-import { Card } from "@/components/ui/card";
+
+// Images
+import discussion from "@/app/assets/page/services/discussion.jpg";
 
 // Icons
 import { FaPeopleGroup } from "react-icons/fa6";
@@ -96,7 +98,7 @@ export default function Page() {
       <div className="relative w-full h-full mt-[-1.3rem]">
         <div className="relative bg-gradient-to-r from-[#7297CA] to-[#97C6CD]">
           <Image
-            src={require("@/app/assets/page/services/discussion.jpg")}
+            src={discussion}
             alt="Careers"
             className="w-full h-[160px] object-cover object-top"
           />

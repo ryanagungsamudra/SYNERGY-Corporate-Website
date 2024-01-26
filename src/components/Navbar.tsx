@@ -3,8 +3,10 @@
 // React
 import Image from "next/image";
 import React, { useContext, useState } from "react";
-import Link from "next/link";
 import { SynergyContext } from "@/context";
+import dynamic from "next/dynamic";
+
+const Link = dynamic(() => import("next/link"));
 
 // Logo
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -33,6 +35,126 @@ export default function Navbar() {
   const handleClick = () => setNav(!nav);
 
   const { changeMenu, menu } = useContext(SynergyContext);
+
+  const leftMenuComponents: {
+    title: string;
+    href: string;
+    onClick: () => void;
+    className: string;
+  }[] = [
+    {
+      title: "Company Profile",
+      href: "/about-us/company-profile",
+      onClick: () => changeMenu("company-profile"),
+      className:
+        menu === "company-profile" ? "text-[#fff] bg-[#9FA7AB] flex" : "",
+    },
+    {
+      title: "Our Commitment",
+      href: "/about-us/our-commitment",
+      onClick: () => changeMenu("our-commitment"),
+      className:
+        menu === "our-commitment" ? "text-[#fff] bg-[#9FA7AB] flex" : "",
+    },
+    {
+      title: "Management Team",
+      href: "/about-us/management-team",
+      onClick: () => changeMenu("management-team"),
+      className:
+        menu === "management-team" ? "text-[#fff] bg-[#9FA7AB] flex" : "",
+    },
+    {
+      title: "I.P.A.C",
+      href: "/about-us/ipac",
+      onClick: () => changeMenu("ipac"),
+      className: menu === "ipac" ? "text-[#fff] bg-[#9FA7AB] flex" : "",
+    },
+    {
+      title: "I.A.C",
+      href: "/about-us/iac",
+      onClick: () => changeMenu("iac"),
+      className: menu === "iac" ? "text-[#fff] bg-[#9FA7AB] flex" : "",
+    },
+    {
+      title: "SynergyCare Committee",
+      href: "/about-us/synergycare-committee",
+      onClick: () => changeMenu("synergycare-committee"),
+      className:
+        menu === "synergycare-committee" ? "text-[#fff] bg-[#9FA7AB] flex" : "",
+    },
+  ];
+
+  const rightMenuComponents: {
+    title: string;
+    href: string;
+    onClick: () => void;
+    className: string;
+  }[] = [
+    {
+      title: "Personal",
+      href: "/services/personal",
+      onClick: () => changeMenu("personal"),
+      className: menu === "personal" ? "text-[#fff] bg-[#9FA7AB] flex" : "",
+    },
+    {
+      title: "Corporate",
+      href: "/services/corporate",
+      onClick: () => changeMenu("corporate"),
+      className: menu === "corporate" ? "text-[#fff] bg-[#9FA7AB] flex" : "",
+    },
+    {
+      title: "High Net Worth",
+      href: "/services/high-net-worth",
+      onClick: () => changeMenu("high-net-worth"),
+      className:
+        menu === "high-net-worth" ? "text-[#fff] bg-[#9FA7AB] flex" : "",
+    },
+    // Separator line
+    {
+      title: "General Insurance",
+      href: "/services/general-insurance",
+      onClick: () => changeMenu("general-insurance"),
+      className:
+        menu === "general-insurance" ? "text-[#fff] bg-[#9FA7AB] flex" : "",
+    },
+  ];
+
+  const mobileMenuComponents: {
+    title: string;
+    href: string;
+    onClick: () => void;
+  }[] = [
+    {
+      onClick: handleClick,
+      href: "/about-us/company-profile",
+      title: "Company Profile",
+    },
+    {
+      onClick: handleClick,
+      href: "/about-us/our-commitment",
+      title: "Our Commitment",
+    },
+    {
+      onClick: handleClick,
+      href: "/about-us/management-team",
+      title: "Management Team",
+    },
+    {
+      onClick: handleClick,
+      href: "/about-us/ipac",
+      title: "I.P.A.C.",
+    },
+    {
+      onClick: handleClick,
+      href: "/about-us/iac",
+      title: "I.A.C.",
+    },
+    {
+      onClick: handleClick,
+      href: "/about-us/synergycare-committee",
+      title: "SynergyCare Committee",
+    },
+  ];
 
   return (
     <div className="flex p-4 px-8 fixed top-0 w-full bg-white border-b-[3px] z-50">
@@ -67,52 +189,15 @@ export default function Navbar() {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-4 md:w-[250px] lg:w-[250px]">
-                    <ListItem
-                      className={
-                        menu === "company-profile" &&
-                        "text-[#fff] bg-[#9FA7AB] flex"
-                      }
-                      onClick={() => changeMenu("company-profile")}
-                      href="/about-us/company-profile"
-                      title="Company Profile"></ListItem>
-                    <ListItem
-                      className={
-                        menu === "our-commitment" &&
-                        "text-[#fff] bg-[#9FA7AB] flex"
-                      }
-                      onClick={() => changeMenu("our-commitment")}
-                      href="/about-us/our-commitment"
-                      title="Our Commitment"></ListItem>
-                    <ListItem
-                      className={
-                        menu === "management-team" &&
-                        "text-[#fff] bg-[#9FA7AB] flex"
-                      }
-                      onClick={() => changeMenu("management-team")}
-                      href="/about-us/management-team"
-                      title="Management Team"></ListItem>
-                    <ListItem
-                      className={
-                        menu === "ipac" && "text-[#fff] bg-[#9FA7AB] flex"
-                      }
-                      onClick={() => changeMenu("ipac")}
-                      href="/about-us/ipac"
-                      title="I.P.A.C"></ListItem>{" "}
-                    <ListItem
-                      className={
-                        menu === "iac" && "text-[#fff] bg-[#9FA7AB] flex"
-                      }
-                      onClick={() => changeMenu("iac")}
-                      href="/about-us/iac"
-                      title="I.A.C"></ListItem>{" "}
-                    <ListItem
-                      className={
-                        menu === "synergycare-committee" &&
-                        "text-[#fff] bg-[#9FA7AB] flex"
-                      }
-                      onClick={() => changeMenu("synergycare-committee")}
-                      href="/about-us/synergycare-committee"
-                      title="SynergyCare Committee"></ListItem>
+                    {leftMenuComponents.map((component) => (
+                      <ListItem
+                        key={component.title}
+                        className={component.className}
+                        onClick={component.onClick}
+                        href={component.href}
+                        title={component.title}
+                      />
+                    ))}
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -132,44 +217,30 @@ export default function Navbar() {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-4 md:w-[250px] lg:w-[250px]">
-                    <ListItem
-                      onClick={() => changeMenu("personal")}
-                      href="/services/personal"
-                      title="Personal"
-                      className={
-                        menu === "personal" && "text-[#fff] bg-[#9FA7AB] flex"
-                      }></ListItem>
-                    <ListItem
-                      onClick={() => changeMenu("corporate")}
-                      href="/services/corporate"
-                      title="Corporate"
-                      className={
-                        menu === "corporate" && "text-[#fff] bg-[#9FA7AB] flex"
-                      }></ListItem>
-                    <ListItem
-                      onClick={() => changeMenu("high-net-worth")}
-                      href="/services/high-net-worth"
-                      title="High Net Worth"
-                      className={
-                        menu === "high-net-worth" &&
-                        "text-[#fff] bg-[#9FA7AB] flex"
-                      }></ListItem>
-                    <hr className="border-t border-gray-300" />
-                    <ListItem
-                      onClick={() => changeMenu("general-insurance")}
-                      href="/services/general-insurance"
-                      title="General Insurance"
-                      className={
-                        menu === "general-insurance" &&
-                        "text-[#fff] bg-[#9FA7AB] flex"
-                      }></ListItem>
+                    {rightMenuComponents.map((component) => (
+                      <React.Fragment key={component.title}>
+                        <ListItem
+                          key={component.title}
+                          onClick={component.onClick}
+                          href={component.href}
+                          title={component.title}
+                          className={component.className}
+                        />
+                        {component.title === "High Net Worth" && (
+                          <hr className="border-t border-gray-300" />
+                        )}
+                      </React.Fragment>
+                    ))}
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
               {/* Careers */}
               <NavigationMenuItem>
-                <Link href="/careers" onClick={() => changeMenu("careers")}>
+                <Link
+                  href="/careers"
+                  onClick={() => changeMenu("careers")}
+                  prefetch>
                   <NavigationMenuLink
                     className={
                       (navigationMenuTriggerStyle(),
@@ -186,7 +257,10 @@ export default function Navbar() {
 
               {/* Standards */}
               <NavigationMenuItem>
-                <Link href="/standards" onClick={() => changeMenu("standards")}>
+                <Link
+                  href="/standards"
+                  onClick={() => changeMenu("standards")}
+                  prefetch>
                   <NavigationMenuLink
                     className={
                       (navigationMenuTriggerStyle(),
@@ -209,7 +283,10 @@ export default function Navbar() {
           <NavigationMenuList>
             {/* Articles */}
             <NavigationMenuItem>
-              <Link href="/articles" onClick={() => changeMenu("articles")}>
+              <Link
+                href="/articles"
+                onClick={() => changeMenu("articles")}
+                prefetch>
                 <NavigationMenuLink
                   className={
                     (navigationMenuTriggerStyle(),
@@ -226,7 +303,7 @@ export default function Navbar() {
 
             {/* News */}
             <NavigationMenuItem>
-              <Link href="/news" onClick={() => changeMenu("news")}>
+              <Link href="/news" onClick={() => changeMenu("news")} prefetch>
                 <NavigationMenuLink
                   className={
                     (navigationMenuTriggerStyle(),
@@ -243,7 +320,10 @@ export default function Navbar() {
 
             {/* Contact */}
             <NavigationMenuItem>
-              <Link href="/contact" onClick={() => changeMenu("contact")}>
+              <Link
+                href="/contact"
+                onClick={() => changeMenu("contact")}
+                prefetch>
                 <NavigationMenuLink
                   className={
                     (navigationMenuTriggerStyle(),
@@ -280,7 +360,7 @@ export default function Navbar() {
       </div>
       {/* Hamburger */}
       <div className="md:hidden z-[999] flex w-full h-full items-center justify-between">
-        <Link href="/">
+        <Link href="/" prefetch>
           <Image
             className="cursor-pointer"
             src={synergyLogo}
@@ -313,30 +393,14 @@ export default function Navbar() {
               <AccordionContent>
                 <NavigationMenu>
                   <ul className="grid gap-3 p-4 border w-[100vw] rounded-md">
-                    <ListItem
-                      onClick={handleClick}
-                      href="/about-us/company-profile"
-                      title="Company Profile"></ListItem>
-                    <ListItem
-                      onClick={handleClick}
-                      href="/about-us/our-commitment"
-                      title="Our Commitment"></ListItem>
-                    <ListItem
-                      onClick={handleClick}
-                      href="/about-us/management-team"
-                      title="Management Team"></ListItem>
-                    <ListItem
-                      onClick={handleClick}
-                      href="/about-us/ipac"
-                      title="I.P.A.C."></ListItem>
-                    <ListItem
-                      onClick={handleClick}
-                      href="/about-us/iac"
-                      title="I.A.C."></ListItem>
-                    <ListItem
-                      onClick={handleClick}
-                      href="/about-us/synergycare-committee"
-                      title="SynergyCare Committee"></ListItem>
+                    {mobileMenuComponents.map((component) => (
+                      <ListItem
+                        key={component.title}
+                        onClick={component.onClick}
+                        href={component.href}
+                        title={component.title}
+                      />
+                    ))}
                   </ul>
                 </NavigationMenu>
               </AccordionContent>
@@ -442,6 +506,7 @@ const ListItem = React.forwardRef<
             "block select-none space-y-1 rounded-md p-1 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
           )}
+          href={props.href || "/default"}
           {...props}>
           <div className="text-sm font-medium leading-none">{title}</div>
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
@@ -452,4 +517,5 @@ const ListItem = React.forwardRef<
     </li>
   );
 });
+
 ListItem.displayName = "ListItem";

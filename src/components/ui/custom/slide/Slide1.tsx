@@ -3,15 +3,17 @@
 import Image from "next/image";
 import React from "react";
 
+// Images
+import background1 from "@/app/assets/landing/background1.jpg";
+import overlay1 from "@/app/assets/landing/2023-lfs.jpg";
+import overlay2 from "@/app/assets/landing/2023-journey.png";
+
 export default function Slide1() {
   return (
     <div className="relative h-[682px] flex items-start justify-center">
       {/* Background Image */}
       <div className="relative w-full h-[682px]">
-        <Image
-          alt="background"
-          src={require("@/app/assets/landing/background1.jpg")}
-        />
+        <Image alt="background" src={background1} />
       </div>
 
       {/* Overlay Images */}
@@ -20,7 +22,7 @@ export default function Slide1() {
           <div className="bg-white w-[290px] mb-6 md:mb-0 md:w-[550px] md:h-[550px] rounded-md">
             <Image
               alt="overlay"
-              src={require("@/app/assets/landing/2023-lfs.jpg")}
+              src={overlay1}
               width={400}
               height={400}
               className="rounded-md"
@@ -31,7 +33,7 @@ export default function Slide1() {
           <div className="bg-white w-[290px] md:w-[550px] md:h-[550px] rounded-md">
             <Image
               alt="overlay"
-              src={require("@/app/assets/landing/2023-journey.png")}
+              src={overlay2}
               width={400}
               height={400}
               className="rounded-md"

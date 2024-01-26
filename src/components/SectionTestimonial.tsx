@@ -22,8 +22,6 @@ export default function SectionTestimonial() {
 
     requestAnimationFrame(raf);
   });
-
-  // const projects = [
   //   {
   //     title: "Mr Tan Yi Heng",
   //     job: "",
@@ -95,12 +93,39 @@ export default function SectionTestimonial() {
   useEffect(() => {
     fetchClients("?&populate=*")
       .then((res) => {
-        setProjects(res.data);
+        // Shuffle the entire list
+        const shuffledProjects = shuffleArray(res.data);
+
+        // Take the first 4 projects
+        const selectedProjects = shuffledProjects.slice(0, 4);
+
+        setProjects(selectedProjects);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
+
+  // Function to shuffle array (Fisher-Yates algorithm)
+  function shuffleArray(array: any[]) {
+    let currentIndex = array.length,
+      randomIndex;
+
+    // While there remain elements to shuffle...
+    while (currentIndex !== 0) {
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+
+    return array;
+  }
 
   return (
     <>
@@ -121,14 +146,6 @@ export default function SectionTestimonial() {
             const advisorId = project.attributes.adviser.data.id;
             const imageUrl = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${project.attributes.img.data.attributes.url}`;
 
-            console.log({
-              imageUrl,
-              title,
-              job,
-              description,
-              clientOf,
-              advisorId,
-            });
             return (
               <TestimonialCard
                 key={`p_${i}`}
