@@ -74,7 +74,7 @@ const TestimonialCard = ({
               {truncatedDescMobile}
             </p>
             <div className="absolute bottom-0 md:left-[0rem]">
-              <Link href={`/advisers/${advisorId}`} target="_blank">
+              <Link href={`/advisers/${advisorId}`}>
                 <button className="flex h-[40px] md:w-[500px] justify-center items-center gap-2 rounded-2xl border-2 border-dashed border-black bg-white px-4 py-4 font-semibold uppercase text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none">
                   <h4 className="text-[12px] md:text-[14px] flex gap-2">
                     CLIENT OF{" "}

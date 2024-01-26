@@ -93,8 +93,9 @@ export default function SectionTestimonial() {
   useEffect(() => {
     fetchClients("?&populate=*")
       .then((res) => {
-        // Shuffle the entire list
-        const shuffledProjects = shuffleArray(res.data);
+        // Seed the random number generator with the current timestamp
+        const seed = new Date().getTime();
+        const shuffledProjects = shuffleArray(res.data, seed);
 
         // Take the first 4 projects
         const selectedProjects = shuffledProjects.slice(0, 4);
@@ -106,15 +107,21 @@ export default function SectionTestimonial() {
       });
   }, []);
 
-  // Function to shuffle array (Fisher-Yates algorithm)
-  function shuffleArray(array: any[]) {
+  // Function to shuffle array (Fisher-Yates algorithm) with seed
+  function shuffleArray(array: any[], seed: number) {
     let currentIndex = array.length,
       randomIndex;
+
+    // Use a seeded random number generator
+    const seededRandom = (max: number) => {
+      seed = (seed * 9301 + 49297) % 233280;
+      return (seed / 233280.0) * max;
+    };
 
     // While there remain elements to shuffle...
     while (currentIndex !== 0) {
       // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
+      randomIndex = Math.floor(seededRandom(currentIndex));
       currentIndex--;
 
       // And swap it with the current element.
